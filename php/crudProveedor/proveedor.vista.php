@@ -15,10 +15,14 @@
 
     <?php include '../util/header.php'; ?>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="card offset-md-4 col-md-4">
-                <form method="post" action="proveedor.controlador.php">
+
+
+
+
+    <form method="post" action="proveedor.controlador.php">
+        <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                     <div class="mb-3">
                         <label for="nombreEmpresa" class="form-label">Empresa</label>
                         <input type="text" class="form-control" id="nombreEmpresa" name="nombreEmpresa" placeholder="Nombre Empresa">
@@ -44,15 +48,15 @@
                         <input type="text" class="form-control" id="telAsesor" name="telAsesor" placeholder="Telefono Asesor">
                     </div>
                     <div class="mb-3">
-                        <label for="infoAdicional" class="form-label">Informacion Adicional</label>
-                        <textarea class="form-control" id="infoAdicional" name="infoAdicional" rows="3"></textarea>
+                        <label for="in" class="form-label">Informacion Adicional</label>
+                        <textarea class="form-control" id="in" name="" rows="3"></textarea>
                     </div>
                     <div class="mb-3">
                         <input class="btn btn-primary" type="submit" value="Submit">
                     </div>
+                </div>
             </div>
         </div>
-    </div>
     </form>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
