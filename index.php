@@ -22,7 +22,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                <a class="nav-link active" aria-current="page" href="TiendaPHP/index.php">Inicio</a>
               </li>
                <!-- <li class="nav-item">
                 <a class="nav-link" href="#">Productos</a>
@@ -44,7 +44,7 @@
                 </a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="AgregarEmpleados.html">Agregar</a></li>
-                  <!-- <li><a class="dropdown-item" href="modificarProducto.html">Modificar</a></li> -->
+                   <li><a class="dropdown-item" href="#">Modificar</a></li> -->
                   <!-- <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                 </ul>
@@ -54,11 +54,11 @@
                   Cliente
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Agregar</a></li>
+                  <li><a class="dropdown-item" href="php/crudCliente/cliente.vista.php">Agregar</a></li>
 
-                  <!-- <li><a class="dropdown-item" href="modificarProducto.html">Modificar</a></li> -->
-                  <!-- <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                   <!-- <li><a class="dropdown-item" href="">Modificar</a></li>  -->
+                  <li><class="dropdown-divider"></li>
+                  <!-- <li><a class="dropdown-item" href="#">Something else here</a></li>  -->
                 </ul>
               </li>
 
@@ -67,7 +67,7 @@
                   Proveedor
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="agregarProveedor.html">Agregar </a></li>
+                  <li><a class="dropdown-item" href="#">Agregar </a></li>
                   <!-- <li><a class="dropdown-item" href="modificarProducto.html">Modificar</a></li> -->
                   <!-- <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li> -->
