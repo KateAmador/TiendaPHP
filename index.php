@@ -34,7 +34,7 @@
                   Productos
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="agregarProducto.html">Agregar</a></li>
+                  <li><a class="dropdown-item" href="producto.vista.php">Agregar</a></li>
                   <li><a class="dropdown-item" href="#">Modificar</a></li>
                   <!-- <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li> -->
