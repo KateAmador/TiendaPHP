@@ -12,7 +12,8 @@
   <title>Tienda</title>
 </head>
 
-<body>
+<body>  
+
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">TIENDA</a>
@@ -56,12 +57,13 @@
               Cliente
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="php/crudCliente/cliente.vista.php">Agregar</a></li>
-               <li><a class="dropdown-item"  href ="editarproceso.php">Modificar</a></li>  
+              <li><a class="dropdown-item" href="cliente.vista.php">Agregar</a></li>
+               <li><a class="dropdown-item"  href =" editar.php">Modificar</a></li>  
               <!-- <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li> -->
             </ul>
           </li>
+         
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="AgregarCliente.html" role="button" data-bs-toggle="dropdown"
@@ -97,37 +99,36 @@
     </div>
   </nav>
 
-  <form method = "post" action = "registro.php">
+  <form method = "post" action = "editar.php">
      <div class="container-fluid">
       <div class="row">
-       <div class="mb-3 col-6">
-
+       <div class="card offset-md-4 col-md-4">
           <p>Cliente id: </p>
             <input class="form-control" name = "cli_codigo" placeholder="Cliente id"><br />
   
-             <p>Nombre: </p>
+            <p>Nombre: </p>
                <input class="form-control" name = "nombre" placeholder="Nombre"><br />
-       
-              <p>Apellido: </p>
-                <input class="form-control" name = "apellido" placeholder="Apellido"><br />
+
+                 <p>Apellido: </p>
+                  <input class="form-control" name = "apellido" placeholder="Apellido"><br />
+  
+                    <p>Documento: </p>
+                      <input class="form-control" name = "documento" placeholder="Documento"><br />
       
-                <p>Documento: </p>
-                  <input class="form-control" name = "documento" placeholder="Documento"><br />
+                     <p>Telefono: </p>
+                       <input class="form-control" name = "telefono" placeholder="Telefono"><br />
       
-                 <p>Telefono: </p>
-                  <input class="form-control" name = "telefono" placeholder="Telefono"><br />
+                      <p>Correo Electronico: </p>
+                       <input class="form-control" name = "correo" placeholder="Correo - Electronico"><br />
       
-                 <p>Correo Electronico: </p>
-            <input class="form-control" name = "correo" placeholder="Correo - Electronico"><br />
-      
-          <p>Direccion: </p>
-          <input class="form-control" name = "direccion" placeholder="name@example.com"><br />
+                      <p>Direccion: </p>
+                        <input class="form-control" name = "direccion" placeholder="name@example.com"><br />
       
           <p>info-demas: </p>
           <input class="form-control" name = "info_demas" placeholder="name@example.com"><br />
           
           <p>
-            <button class="btn btn-primary" type="submit" style="width: 120px; height: 60px;">Guardar</button>
+            <button class="btn btn-primary" type="submit" style="width: 120px; height: 60px;">editar</button>
           </p>
         
           
@@ -136,10 +137,10 @@
          
         </div>
         
-        </div>
-        </div>
+            </div>
+            </div>
+           
   </form> 
-
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
