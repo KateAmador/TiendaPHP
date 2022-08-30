@@ -12,37 +12,41 @@
 </head>
 
 <body>
-
     <?php include '../util/header.php'; ?>
 
-
-
-
-
-    <form method="post" action="proveedor.controlador.php">
+    <form class="card col-12 col-md-6 offset-md-3 mt-5" method="post" action="proveedor.controlador.php">
+        <div class="card-header">
+            <h5 class="card-title">Agregar Proveedor</h5>
+        </div>
+        
         <div class="card-body p-md-5">
             <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                    <div class="mb-3">
-                        <label for="nombreEmpresa" class="form-label">Empresa</label>
-                        <input type="text" class="form-control" id="nombreEmpresa" name="nombreEmpresa" placeholder="Nombre Empresa">
+                <div>
+                    <div class="row">
+                        <div class="mb-3 col-6">
+                            <label for="nombreEmpresa" class="form-label">Empresa</label>
+                            <input type="text" class="form-control" id="nombreEmpresa" name="nombreEmpresa" placeholder="Nombre Empresa">
+                        </div>
+                        <div class="mb-3 col-6">
+                            <label for="direccion" class="form-label">Direccion</label>
+                            <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion">
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="direccion" class="form-label">Direccion</label>
-                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion">
+                    <div class="row">
+                        <div class="mb-3 col-4">
+                            <label for="telefono" class="form-label">Telefono</label>
+                            <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
+                        </div>
+                        <div class="mb-3 col-4">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="mb-3 col-4">
+                            <label for="asesor" class="form-label">Asesor</label>
+                            <input type="text" class="form-control" id="asesor" name="asesor" placeholder="Nombre Asesor">
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="telefono" class="form-label">Telefono</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono">
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
-                    </div>
-                    <div class="mb-3">
-                        <label for="asesor" class="form-label">Asesor</label>
-                        <input type="text" class="form-control" id="asesor" name="asesor" placeholder="Nombre Asesor">
-                    </div>
+                    
                     <div class="mb-3">
                         <label for="telAsesor" class="form-label">Telefono Asesor</label>
                         <input type="text" class="form-control" id="telAsesor" name="telAsesor" placeholder="Telefono Asesor">
