@@ -25,12 +25,6 @@
         <div class="card-body p-md-5">
             <div class="row justify-content-center">
                 <div>
-                    <div class="row">
-                        <div class="mb-3 col-6">
-                            <label for="idEntrada" class="form-label">ID Entrada</label>
-                            <input type="number" class="form-control" id="idEntrada" name="idEntrada" placeholder="ID Entrada" required>
-                        </div>
-
                         <div class="mb-3 col-6">
                         <label for="idProducto" class="form-label">Producto</label>
                         <select class="form-select" name="idProducto" aria-label="Default select example">
