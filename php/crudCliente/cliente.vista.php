@@ -13,129 +13,59 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">TIENDA</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/TiendaPHP/index.php">Inicio</a>
-          </li>
-          <!-- <li class="nav-item">
-                <a class="nav-link" href="#">Productos</a>
-              </li> -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Productos
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="agregarProducto.html">Agregar</a></li>
-              <li><a class="dropdown-item" href="modificarProducto.html">Modificar</a></li>
-              <!-- <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Empleados
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Agregar</a></li>
-              <!-- <li><a class="dropdown-item" href="modificarProducto.html">Modificar</a></li> -->
-              <!-- <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="AgregarEmpleados.html" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Cliente
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="php/crudCliente/cliente.vista.php">Agregar</a></li>
-               <li><a class="dropdown-item"  href ="editarproceso.php">Modificar</a></li>  
-              <!-- <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-            </ul>
-          </li>
+<?php include '../util/header.php'; ?>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="AgregarCliente.html" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Proveedor
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="agregarProducto.html">Agregar </a></li>
-              <!-- <li><a class="dropdown-item" href="modificarProducto.html">Modificar</a></li> -->
-              <!-- <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="agregarProveedor.html" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Ventas
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="agregarProducto.html">Agregar</a></li>
-              <!-- <li><a class="dropdown-item" href="modificarProducto.html">Modificar</a></li> -->
-              <!-- <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-            </ul>
-          </li>
+  <form class = "card col-2 col-md-7 offset-md-3 mt-5" method = "post" action = "cliente.controlador.php">
+      <div class="card-header ">
+       <h5 class= "card-header">Agregar cliente</h5>
+        </div>
+    
+      <div class="card-body p-md-5">
+       <div class="row justify-content-center">
+        <div> 
 
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
-
-  <form method = "post" action = "registro.php">
-     <div class="container-fluid">
       <div class="row">
-       <div class="mb-3 col-6">
+        <div class="mb-1 col-6">
+         <label for = "cli_codigo" class ="form-label">cliente id:</label>
+          <input type = "text" class="form-control" name = "id_cliente" id = "cliente_id" placeholder="Cliente id"><br />
+            </div>
+            
+             <div class="mb-2 col-6">
+               <p>Nombre: </p>
+                <input class="form-control" name = "nombre_cliente" placeholder="Nombre"><br />
+             </div>
+         </div>
 
-          <p>Cliente id: </p>
-            <input class="form-control" name = "cli_codigo" placeholder="Cliente id"><br />
-  
-             <p>Nombre: </p>
-               <input class="form-control" name = "nombre" placeholder="Nombre"><br />
-       
+            <div class="row">
+              <div class="mb-2 col-6">
               <p>Apellido: </p>
-                <input class="form-control" name = "apellido" placeholder="Apellido"><br />
-      
-                <p>Documento: </p>
-                  <input class="form-control" name = "documento" placeholder="Documento"><br />
-      
-                 <p>Telefono: </p>
-                  <input class="form-control" name = "telefono" placeholder="Telefono"><br />
-      
-                 <p>Correo Electronico: </p>
-            <input class="form-control" name = "correo" placeholder="Correo - Electronico"><br />
-      
+              <input class="form-control" name = "apellido_cliente" placeholder="Apellido"><br />
+            </div>
+  
+        
+            <div class="row">
+              <div class="mb-3 col-6">
+                <p>Telefono: </p>
+                  <input class="form-control" name = "telefono_cliente" placeholder="Telefono"><br />
+               </div>
+
+              <div class="mb-3 col-6">
+                <p>Correo Electronico: </p>
+             <input class="form-control" name = "email_cliente" placeholder="Correo - Electronico">
+            </div>
+
           <p>Direccion: </p>
-          <input class="form-control" name = "direccion" placeholder="name@example.com"><br />
+          <input class="form-control" name = "direccion_cliente" placeholder="name@example.com">
       
           <p>info-demas: </p>
-          <input class="form-control" name = "info_demas" placeholder="name@example.com"><br />
+          <textarea class="form-control" name = "info_cliente" placeholder="info demas"></textarea>
           
-          <p>
+          <p><br/>
             <button class="btn btn-primary" type="submit" style="width: 120px; height: 60px;">Guardar</button>
           </p>
-        
-          
         </div>
         <div class="contenedor " style="justify-content: center; height: 50vh; margin: 2%; display: flex;">
-         
         </div>
-        
         </div>
         </div>
   </form> 

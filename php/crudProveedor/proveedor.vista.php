@@ -15,10 +15,6 @@
 
     <?php include '../util/header.php'; ?>
 
-
-
-
-
     <form method="post" action="proveedor.controlador.php">
         <div class="card-body p-md-5">
             <div class="row justify-content-center">
