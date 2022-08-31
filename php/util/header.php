@@ -27,7 +27,7 @@
                             Productos
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="agregarProducto.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="php/crudProducto/producto.vista.php">Agregar</a></li>
                             <li><a class="dropdown-item" href="modificarProducto.html">Modificar</a></li>
                             <!-- <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li> -->
