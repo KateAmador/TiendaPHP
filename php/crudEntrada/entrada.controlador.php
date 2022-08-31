@@ -13,7 +13,7 @@
     $sql= "INSERT INTO entradas(id_entrada, idProducto_entrada, , idProveedor_entrada, cantidad_entrada , costo_entrada, total_entrada, fecha_entradada)
              VALUES ('$idEntrada','$idProducto','$nombreProveedor','$cantidad','$costo','$total','$fecha')";
     if (mysqli_query($conn, $sql)) {
-        echo "Proveedor creado correctamente";
+        echo "Entrada creada correctamente";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
