@@ -49,7 +49,11 @@
                             Cliente
                         </a>
                         <ul class="dropdown-menu">
+<<<<<<< HEAD
                             <li><a class="dropdown-item" href="../../php/crudCliente/cliente.vista.php">Agregar</a></li>
+=======
+                            <li><a class="dropdown-item" href="php/crudCliente/cliente.vista.php">Agregar</a></li>
+>>>>>>> feature/RRamirez/act-005
                             <!-- <li><a class="dropdown-item" href="modificarProducto.html">Modificar</a></li> -->
                             <!-- <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li> -->

@@ -13,10 +13,15 @@
 
 <body>
     <?php include '../util/header.php'; ?>
+<<<<<<< HEAD
     <form class="card col-12 col-md-6 offset-md-3 mt-5" method="POST" action="proveedor.controlador.php">
         <div class="card-header">
             <h5 class="card-title">Agregar Proveedor</h5>
         </div>
+=======
+
+    <form method="post" action="proveedor.controlador.php">
+>>>>>>> feature/RRamirez/act-005
         <div class="card-body p-md-5">
             <div class="row justify-content-center">
                 <div>
