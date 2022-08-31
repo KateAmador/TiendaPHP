@@ -35,10 +35,10 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Empleados
+                            Entradas
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="AgregarEmpleados.html">Agregar</a></li>
+                            <li><a class="dropdown-item" href="php/crudEntrada/entrada.vista.php">Agregar</a></li>
                             <!-- <li><a class="dropdown-item" href="modificarProducto.html">Modificar</a></li> -->
                             <!-- <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li> -->
