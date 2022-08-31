@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,6 +16,7 @@
         <div class="card-header">
             <h5 class="card-title">Agregar Proveedor</h5>
         </div>
+    <form method="post" action="proveedor.controlador.php">
         <div class="card-body p-md-5">
             <div class="row justify-content-center">
                 <div>
@@ -66,5 +66,4 @@
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-
 </html>
