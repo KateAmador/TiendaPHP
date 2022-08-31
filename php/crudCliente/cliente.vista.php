@@ -25,38 +25,40 @@
         <div> 
 
       <div class="row">
-        <div class="mb-1 col-6">
+        <div class="mb-3 col-6">
          <label for = "cli_codigo" class ="form-label">cliente id:</label>
           <input type = "text" class="form-control" name = "id_cliente" id = "cliente_id" placeholder="Cliente id"><br />
             </div>
             
-             <div class="mb-2 col-6">
+             <div class="mb-3 col-6">
                <p>Nombre: </p>
                 <input class="form-control" name = "nombre_cliente" placeholder="Nombre"><br />
              </div>
          </div>
 
             <div class="row">
-              <div class="mb-2 col-6">
+              <div class="mb-3 col-6">
               <p>Apellido: </p>
               <input class="form-control" name = "apellido_cliente" placeholder="Apellido"><br />
-            </div>
-  
-        
-            <div class="row">
+</div>
               <div class="mb-3 col-6">
                 <p>Telefono: </p>
                   <input class="form-control" name = "telefono_cliente" placeholder="Telefono"><br />
                </div>
-
+                </div>
+              
+                <div class="row">
               <div class="mb-3 col-6">
                 <p>Correo Electronico: </p>
              <input class="form-control" name = "email_cliente" placeholder="Correo - Electronico">
             </div>
 
+            <div class="mb-3 col-6">
           <p>Direccion: </p>
           <input class="form-control" name = "direccion_cliente" placeholder="name@example.com">
-      
+          </div>
+          </div>
+          
           <p>info-demas: </p>
           <textarea class="form-control" name = "info_cliente" placeholder="info demas"></textarea>
           
