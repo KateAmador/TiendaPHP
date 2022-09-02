@@ -2,7 +2,7 @@
  
  if(isset($_POST['guardar_proveedor'])) {
     guardar();
-} else if(isset($_POST['eliminar'])) {
+} else if(isset($_GET['id_proveedor'])) {
 
 }
 
@@ -29,20 +29,11 @@
     mysqli_close($conn);
  }
 
+ function delete(){ //Funcion para borrar registros
+
+    include_once('../conexion.php');
 
 
+}
 
-    if (isset($_GET["id_proveedor"])){
-        $id=$_GET["id_proveedor"];
-        
-        $sql="DELETE FROM proveedores WHERE id_proveedor=$id";
-        if (mysqli_query($conn, $sql)) {
-            echo '<div class="alert alert-success">Proveedor eliminado correctamente</div>';
-        } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
-    }
-
- 
- 
 ?>
