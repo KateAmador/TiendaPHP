@@ -23,7 +23,7 @@
                         <div>
                             <div class="mb-3 col-2">
                                 <label for="id" class="form-label">ID</label>
-                                <input type="text" class="form-control" id="id" name="id"  readonly onmousedown="return false;">
+                                <input type="text" class="form-control" id="id" name="id" readonly onmousedown="return false;">
                             </div>
                             <div class="row">
                                 <div class="mb-3 col-6">
@@ -169,8 +169,7 @@
                             <td><?= $datos->infoAdicional_proveedor; ?></td>
                             <td>
                                 <a href="" class="btn btn-small btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="agregarForm('<?php echo $datosProveedor ?>');"><i class="fa-solid fa-pen"></i></a>
-                                <a href="proveedor.vista.php?id=<?= $datos->id_proveedor ?>" class="btn btn-small btn-danger" name="eliminar" type="submit">
-                                    <i class="fa-solid fa-trash"></i></a>
+                                <a href="proveedor.vista.php?id=<?= $datos->id_proveedor ?>" class="btn btn-small btn-danger"><i class="fa-solid fa-trash"></i></a>
                             </td>
                         </tr>
                     <?php } ?>

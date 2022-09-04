@@ -4,7 +4,7 @@
     guardar();
 } else if(isset($_POST['actualizar_proveedor'])) {
     actualizar();
-}
+} 
 
  function guardar(){
 
@@ -21,11 +21,10 @@
     $sql= "INSERT INTO proveedores(empresa_proveedor, direccion_proveedor, telefono_proveedor, email_proveedor, asesor_proveedor, telAsesor_proveedor, infoAdicional_proveedor)
              VALUES ('$nombreEmpresa','$direccion','$telefono','$email','$asesor','$telAsesor','$infoAdicional')";
     if (mysqli_query($conn, $sql)) {
-        echo 'Proveedor creado correctamente';
+        Header("Location: proveedor.vista.php");
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
-    
     mysqli_close($conn);
  }
 
@@ -46,12 +45,26 @@
             email_proveedor='$email', asesor_proveedor='$asesor', telAsesor_proveedor='$telAsesor', infoAdicional_proveedor='$infoAdicional' 
             WHERE id_proveedor='$id'";
     if (mysqli_query($conn, $sql)) {
-        echo 'Proveedor actualizo correctamente';
+        Header("Location: proveedor.vista.php");
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+    mysqli_close($conn);
+}
+
+function eliminar(){
+
+    include_once('../conexion.php');
+    $id = trim($_GET['id']);
+
+    $sql= "DELETE FROM proveedores WHERE id_proveedor='$id'";
+    if (mysqli_query($conn, $sql)) {
+        Header("Location: proveedor.vista.php");
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
     
     mysqli_close($conn);
-
-
 }
+
+?>
