@@ -6,14 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
     <title>Tienda</title>
 </head>
 
 <body>
 
-<?php include '../util/header.php'; ?>   
+    <?php include '../util/header.php'; ?>
 
 
     <form method="post" action="producto.controlador.php">
@@ -23,15 +24,18 @@
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                     <div class="mb-3">
                         <label for="nombreProducto" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nombre y Apellido">
+                        <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="Nombre y Apellido">
                     </div>
                     <div class="mb-3">
                         <label for="costoProducto" class="form-label">Costo</label>
-                        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Valor de Compra">
+                        <input type="number" class="form-control" id="exampleFormControlInput1"
+                            placeholder="Valor de Compra">
                     </div>
                     <div class="mb-3">
                         <label for="precioProducto" class="form-label">Precio Venta</label>
-                        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Valor de Venta">
+                        <input type="number" class="form-control" id="exampleFormControlInput1"
+                            placeholder="Valor de Venta">
                     </div>
                     <div class="mb-3">
                         <label for="nombreProveedor" class="form-label">Proveedor</label>
@@ -61,9 +65,10 @@
                     </div>
                     <div class="mb-3">
                         <label for="cantidadProducto" class="form-label">Cantidad del Producto</label>
-                        <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Valor de Compra">
-                    </div>     
-            
+                        <input type="number" class="form-control" id="exampleFormControlInput1"
+                            placeholder="Valor de Compra">
+                    </div>
+
                     <div class="mb-3">
                         <label for="observaciones" class="form-label">Observaciones</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
@@ -72,10 +77,12 @@
                         <input class="btn btn-primary" type="submit" value="Guardar">
                     </div>
                 </div>
-            </div> 
-        </div>  
-    </form> 
+            </div>
+        </div>
+    </form>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+</script>
 
 </html>
