@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: bnjciagdtxueyilzernu-mysql.services.clever-cloud.com:3306
--- Generation Time: Sep 04, 2022 at 07:12 AM
+-- Generation Time: Sep 06, 2022 at 09:03 PM
 -- Server version: 8.0.22-13
 -- PHP Version: 7.2.34
 
@@ -31,15 +31,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `categorias` (
   `id_categoria` int NOT NULL,
   `nombre_categoria` varchar(30) DEFAULT NULL,
-  `descripcion_categoria` varchar(250) DEFAULT NULL
+  `descripcion_categoria` varchar(250) DEFAULT NULL,
+  `estado_categoria` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `categorias`
 --
 
-INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `descripcion_categoria`) VALUES
-(1, 'Comida', 'Algo');
+INSERT INTO `categorias` (`id_categoria`, `nombre_categoria`, `descripcion_categoria`, `estado_categoria`) VALUES
+(1, 'Comida', 'Algo', 0),
+(2, 'B', 'chocolatina', 0);
 
 -- --------------------------------------------------------
 
@@ -54,21 +56,25 @@ CREATE TABLE `clientes` (
   `telefono_cliente` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `email_cliente` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `direccion_cliente` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `info_cliente` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+  `info_cliente` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `estado_cliente` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `clientes`
 --
 
-INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `telefono_cliente`, `email_cliente`, `direccion_cliente`, `info_cliente`) VALUES
-(1, 'Ronal', 'Ramirez', '3213441221', 'Ronuldox', 'calle 1', ''),
-(2, 'Ronal', 'Ramirez', '3213441221', 'Ronuldox.2003@gmail.com', 'calle 1', 'Solo me falta acomodar el formulario que quedo con un hueco entonces hay que rellenarlo'),
-(3, 'ronal', 'Ramirez', '3', '', '', ''),
-(5, 'Ronal', 'david', '3213441221', 'Ronuldox.2003@gmail.com', 'calle 1', 'a'),
-(7, 'jose', 'david', '3213441221', 'Ronuldox.2003@gmail.com', 'calle 1', 'a'),
-(15, 'ronal', 'f', 'as', 'Ronuldox.2003@gmail.com', 'sa', 'holaaa'),
-(123, 'Katherin Daniela', 'Vélez', '3163160666', 'kateamador13@gmail.com', 'Calle 14 a # 25 - 17', 'JJJ');
+INSERT INTO `clientes` (`id_cliente`, `nombre_cliente`, `apellido_cliente`, `telefono_cliente`, `email_cliente`, `direccion_cliente`, `info_cliente`, `estado_cliente`) VALUES
+(1, 'Ronal', 'Ramirez', '3213441221', 'example@gmail.com', 'calle 1', 'info', 0),
+(2, 'Ronal', 'Ramirez', '3213441221', 'Ronuldox.2003@gmail.com', 'calle 2', 'client 1', 0),
+(3, 'ronal', 'Ramirez', '3', 'Ronuldox.2003@gmail.com', 'calle 2', 'por mejorar', 0),
+(4, 'julio', 'Ramirez', '3213441221', 'Ronuldox.2003@gmail.com', 'calle 2', 'Hola', 0),
+(5, 'Ronal', 'david', '3213441221', 'Ronuldox.2003@gmail.com', 'calle 1', 'Hola', 0),
+(6, 'ronal', 'Ramirez', '', 'Ronuldox.2003@gmail.com', 'calle 1', 'por mejorar', 0),
+(7, 'juan', 'david', '3213441221', 'Ronuldox.2003@gmail.com', 'calle 1', 'info demas', 0),
+(8, 'jose', 'alex', '321232342', 'ramirez.193@gmail.com', 'calle 2', 'Hola', 0),
+(15, 'jose', 'eduardo', 'as', 'Ronuldox.2003@gmail.com', 'carrera #9 con 12', 'colombia', 0),
+(123, 'Katherin Daniela', 'Vélez', '3163160666', 'kateamador13@gmail.com', 'Calle 14 a # 25 - 17', 'JJJJ', 0);
 
 -- --------------------------------------------------------
 
@@ -139,16 +145,18 @@ CREATE TABLE `proveedores` (
   `email_proveedor` varchar(40) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `asesor_proveedor` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `telAsesor_proveedor` varchar(15) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `infoAdicional_proveedor` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+  `infoAdicional_proveedor` varchar(250) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `estado_proveedor` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `proveedores`
 --
 
-INSERT INTO `proveedores` (`id_proveedor`, `empresa_proveedor`, `direccion_proveedor`, `telefono_proveedor`, `email_proveedor`, `asesor_proveedor`, `telAsesor_proveedor`, `infoAdicional_proveedor`) VALUES
-(1, 'osdocorp', 'calle 10', '7585575', 'ejemplo@gmail.com', 'oscar', '875757587875', 'todo bien'),
-(2, 'udev', 'carrera 7', '123456', 'ejemplo@gmail.com', 'oscar', '456123', 'Listo');
+INSERT INTO `proveedores` (`id_proveedor`, `empresa_proveedor`, `direccion_proveedor`, `telefono_proveedor`, `email_proveedor`, `asesor_proveedor`, `telAsesor_proveedor`, `infoAdicional_proveedor`, `estado_proveedor`) VALUES
+(1, 'osdocorp', 'calle 10', '7585575', 'ejemplo@gmail.com', 'oscar', '875757587875', 'todo ok', 0),
+(2, 'udev', 'carrera 7', '123456', 'ejemplo@gmail.com', 'oscar', '456123', 'gbgbggf', 0),
+(7, 'kate', 'Calle 14 a # 25 - 17', '3163160666', 'kateamador13@gmail.com', 'Katherin', '3163160666', 'hello', 1);
 
 -- --------------------------------------------------------
 
@@ -253,7 +261,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT for table `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `id_categoria` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_categoria` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `entradas`
@@ -277,7 +285,7 @@ ALTER TABLE `productos`
 -- AUTO_INCREMENT for table `proveedores`
 --
 ALTER TABLE `proveedores`
-  MODIFY `id_proveedor` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_proveedor` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `salidas`
