@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <?php include '../php/util/header.php';  ?>
+    <?php include '../util/header.php';  ?>
 
     <h3>Agregar un nuevo cliente</h3>
     <!-- Button trigger modal de guardar -->
@@ -276,4 +276,4 @@
 
     </div>
 
-    <?php include '../php/util/footer.php';  ?>
+    <?php include '../util/footer.php';  ?>
