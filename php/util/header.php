@@ -64,6 +64,14 @@
                             <li><a class="dropdown-item" href="#">Agregar</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categorias
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../crudCategoria/categoria.vista.php">Agregar</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
