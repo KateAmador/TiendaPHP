@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 
-    <title>Tienda</title>
+    <title>Cliente</title>
     <!-- iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 
@@ -18,9 +19,9 @@
     <?php include '../php/util/header.php';  ?>
 
     <h3>Agregar un nuevo cliente</h3>
-    <!-- Button trigger modal -->
+    <!-- Button trigger modal de guardar -->
     <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#guardar">
-        Agregar +
+        Agregar cliente
     </button>
 
     <!-- Modal guardar -->
@@ -40,38 +41,45 @@
                             <div class="row">
                                 <div class="mb-3 col-6">
                                     <label for="nombre_cliente" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" name="nombre_cliente" placeholder="Nombre cliente" required>
+                                    <input type="text" class="form-control" name="nombre_cliente"
+                                        placeholder="Nombre cliente" required>
                                 </div>
                                 <div class="mb-3 col-6">
                                     <label for="apellido_cliente" class="form-label">apellido</label>
-                                    <input type="text" class="form-control" name="apellido_cliente" placeholder="apellido_cliente" required>
+                                    <input type="text" class="form-control" name="apellido_cliente"
+                                        placeholder="apellido_cliente" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="mb-3 col-6">
                                     <label for="cliente_telefono" class="form-label">telefono</label>
-                                    <input type="number" class="form-control" name="telefono_cliente" placeholder="telefono_cliente" required>
+                                    <input type="number" class="form-control" name="telefono_cliente"
+                                        placeholder="telefono_cliente" required>
                                 </div>
                                 <div class="mb-3 col-6">
                                     <label for="email_cliente" class="form-label">Email</label>
-                                    <input type="email" class="form-control" name="email_cliente" placeholder="Email_cliente" required>
+                                    <input type="email" class="form-control" name="email_cliente"
+                                        placeholder="Email_cliente" required>
                                 </div>
 
                             </div>
                             <div class="row">
                                 <div class="mb-3 col-6">
                                     <label for="direccion_cliente" class="form-label">direccion</label>
-                                    <input type="text" class="form-control" name="direccion_cliente" placeholder="direccion_cliente" required>
+                                    <input type="text" class="form-control" name="direccion_cliente"
+                                        placeholder="direccion_cliente" required>
                                 </div>
                                 <div class="mb-3 col-6">
                                     <label for="info_cliente" class="form-label">info demas</label>
-                                    <input type="text" class="form-control" name="info_cliente" placeholder="Info demas" required>
+                                    <input type="text" class="form-control" name="info_cliente" placeholder="Info demas"
+                                        required>
                                 </div>
 
                             </div>
                         </div>
                         <p><br />
-                            <button class="btn btn-primary" type="submit" style="width: 120px; height: 60px;" name="cliente_guardar" value="guardar">Guardar</button>
+                            <button class="btn btn-primary" type="submit" style="width: 120px; height: 60px;"
+                                name="cliente_guardar" value="guardar">Guardar</button>
 
 
                         </p>
@@ -104,37 +112,44 @@
                         <div>
                             <div class="mb-3 col-2">
                                 <label for="id_cliente" class="form-label">ID</label>
-                                <input type="text" class="form-control" id="id_cliente" name="id_cliente" readonly onmousedown="return false;">
+                                <input type="text" class="form-control" id="id_cliente" name="id_cliente" readonly
+                                    onmousedown="return false;">
                             </div>
                             <div class="row">
                                 <div class="mb-3 col-6">
                                     <label for="nombre_cliente" class="form-label">Nombre</label>
-                                    <input type="text" class="form-control" id="nombre_cliente" name="nombre_cliente" placeholder="Nombre cliente" required>
+                                    <input type="text" class="form-control" id="nombre_cliente" name="nombre_cliente"
+                                        placeholder="Nombre cliente" required>
                                 </div>
                                 <div class="mb-3 col-6">
                                     <label for="apellido_cliente" class="form-label">apellido</label>
-                                    <input type="text" class="form-control" id="apellido_cliente" name="apellido_cliente" placeholder="apellido_cliente" required>
+                                    <input type="text" class="form-control" id="apellido_cliente"
+                                        name="apellido_cliente" placeholder="apellido_cliente" required>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="mb-3 col-6">
                                     <label for="cliente_telefono" class="form-label">telefono</label>
-                                    <input type="number" class="form-control" id="telefono_cliente" name="telefono_cliente" placeholder="telefono_cliente" required>
+                                    <input type="number" class="form-control" id="telefono_cliente"
+                                        name="telefono_cliente" placeholder="telefono_cliente" required>
                                 </div>
                                 <div class="mb-3 col-6">
                                     <label for="email_cliente" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email_cliente" name="email_cliente" placeholder="Email_cliente" required>
+                                    <input type="email" class="form-control" id="email_cliente" name="email_cliente"
+                                        placeholder="Email_cliente" required>
                                 </div>
 
                             </div>
                             <div class="row">
                                 <div class="mb-3 col-6">
                                     <label for="direccion_cliente" class="form-label">direccion</label>
-                                    <input type="text" class="form-control" id="direccion_cliente" name="direccion_cliente" placeholder="direccion_cliente" required>
+                                    <input type="text" class="form-control" id="direccion_cliente"
+                                        name="direccion_cliente" placeholder="direccion_cliente" required>
                                 </div>
                                 <div class="mb-3 col-6">
                                     <label for="info_cliente" class="form-label">info demas</label>
-                                    <input type="text" class="form-control" id="info_cliente" name="info_cliente" placeholder="Info demas" required>
+                                    <input type="text" class="form-control" id="info_cliente" name="info_cliente"
+                                        placeholder="Info demas" required>
                                 </div>
 
                             </div>
@@ -167,14 +182,15 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
-                        <input class="btn btn-primary" id="eliminar" name="eliminar_cliente" type="submit" value="eliminar">
+                        <input class="btn btn-primary" id="estado_cliente" name="estado_cliente" type="submit"
+                            value="eliminar">
                     </div>
                 </div>
             </div>
         </div>
     </form>
 
-    <hr />
+
     <div class="card">
         <div class="p-4">
             <table class="table table-striped align-middle">
@@ -198,7 +214,7 @@
                     <?php
                     include_once('../conexion.php') ?>
                     <?php
-                    $sql = $conn->query("SELECT * FROM clientes");
+                    $sql = $conn->query("SELECT * FROM clientes WHERE estado_cliente = 0");
                     while ($datos = $sql->fetch_object()) {
 
                         $datosclientes = $datos->id_cliente . "||" .
@@ -210,23 +226,24 @@
                             $datos->info_cliente;
                     ?>
 
-                        <tr>
-                            <th scope="row"><?= $datos->id_cliente; ?></th>
-                            <td><?= $datos->nombre_cliente; ?></td>
-                            <td><?= $datos->apellido_cliente; ?></td>
-                            <td><?= $datos->telefono_cliente; ?></td>
-                            <td><?= $datos->email_cliente; ?></td>
-                            <td><?= $datos->direccion_cliente; ?></td>
-                            <td><?= $datos->info_cliente; ?></td>
+                    <tr>
+                        <th scope="row"><?= $datos->id_cliente; ?></th>
+                        <td><?= $datos->nombre_cliente; ?></td>
+                        <td><?= $datos->apellido_cliente; ?></td>
+                        <td><?= $datos->telefono_cliente; ?></td>
+                        <td><?= $datos->email_cliente; ?></td>
+                        <td><?= $datos->direccion_cliente; ?></td>
+                        <td><?= $datos->info_cliente; ?></td>
 
-                                <!-- boton editar -->
-                            <td><a class="btn btn-succes btn-primary " data-bs-toggle="modal" data-bs-target="#editar">
-                            <i class="fa-solid fa-pen" onclick="agregarForm('<?php echo $datosclientes ?>');"></i></a></td>
-                                
+                        <!-- boton editar -->
+                        <td><a class="btn btn-succes btn-primary " data-bs-toggle="modal" data-bs-target="#editar">
+                                <i class="fa-solid fa-pen" onclick="agregarForm('<?php echo $datosclientes ?>');"></i></a></td>
 
-                            <!-- boton eliminar -->
-                            <td> <a href="cliente.controlador.php?id=<?= $datos->id_cliente ?>" class="btn btn-small btn-danger" name="eliminar_cliente" type="submit" data-bs-target="#eliminar"><i class="fa-solid fa-trash"></i></a></td>
-                        </tr>
+
+                        <!-- boton eliminar -->
+                        <td> <a href="cliente.vista.php?id=<?= $datos->id_cliente ?>" class="btn btn-small btn-danger"
+                        name="estado_cliente" type="submit" data-bs-target="#eliminar"><i class="fa-solid fa-trash"></i></a></td>
+                    </tr>
 
                     <?php } ?>
                 </tbody>
@@ -235,36 +252,22 @@
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
             <script>
-                function agregarForm(datos) {
-                    d = datos.split("||");
+            function agregarForm(datos) {
+                d = datos.split("||");
 
-                    $("#id_cliente").val(d[0]);
-                    $("#nombre_cliente").val(d[1]);
-                    $("#apellido_cliente").val(d[2]);
-                    $("#telefono_cliente").val(d[3]);
-                    $("#email_cliente").val(d[4]);
-                    $("#direccion_cliente").val(d[5]);
-                    $("#info_cliente").val(d[6]);
-                    //$("#emailE").val(d[5]);
+                $("#id_cliente").val(d[0]);
+                $("#nombre_cliente").val(d[1]);
+                $("#apellido_cliente").val(d[2]);
+                $("#telefono_cliente").val(d[3]);
+                $("#email_cliente").val(d[4]);
+                $("#direccion_cliente").val(d[5]);
+                $("#info_cliente").val(d[6]);
+                //$("#emailE").val(d[5]);
 
-                }
+            }
             </script>
 
-            <script>
-                function eliminarForm(dato) {
-                    d = datos.split("||");
-
-                    $("#id_cliente").val(d[0]);
-                    $("#nombre_cliente").val(d[1]);
-                    $("#apellido_cliente").val(d[2]);
-                    $("#telefono_cliente").val(d[3]);
-                    $("#email_cliente").val(d[4]);
-                    $("#direccion_cliente").val(d[5]);
-                    $("#info_cliente").val(d[6]);
-                    //$("#eliminar").val(d[5]);
-
-                }
-            </script>
+          
         </div>
 
 
