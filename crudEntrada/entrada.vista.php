@@ -55,7 +55,14 @@ $component = new Component();
                 </div>
             </div>
 
-            <div class="col-8 mt-3">
+            
+
+
+            
+        </div>
+    </form>
+
+    <div class="col-8 mt-3">
         <h5 class="text-center">ENTRADAS</h5>
     </div>
     <table class="table table table-striped shadow-sm p-3 mb-5 bg-white rounded">
@@ -106,11 +113,6 @@ $component = new Component();
             <?php } ?>
         </tbody>
     </table>
-
-
-            
-        </div>
-    </form>
 
    
    
