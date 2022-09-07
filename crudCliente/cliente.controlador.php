@@ -65,7 +65,7 @@ function eliminar()
   $sql = "UPDATE cliente SET estado_cliente = 0 WHERE id_cliente = '$id_cliente'";
   $query = mysqli_query($conn, $sql);
   if ($query) {
-    //Header("Location: cliente.vista.php");
+    Header("Location: cliente.vista.php");
     echo $sql;
   } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
