@@ -7,7 +7,7 @@
 
         //esta funcion devuelve los option para ser usados dentro de un selct en cualquier parte de la app
         function viewOptionsComponent($nameTable,$value,$showName){
-            include_once('../conexion.php');
+            include('../conexion.php');
             $sql = $conn->query("SELECT * FROM $nameTable");
             while ($datos = $sql->fetch_array()) {
                 echo "
