@@ -59,8 +59,15 @@ function eliminar(){
 
     include_once('../conexion.php');
     $id = trim($_GET['id']);
+    $estado = trim($_GET['estado']);
 
-    $sql= "UPDATE proveedores SET estado_proveedor=0 WHERE id_proveedor='$id'";
+    if($estado == 1){
+
+        $sql= "UPDATE proveedores SET estado_proveedor=0 WHERE id_proveedor='$id'";
+    }else{
+        $sql= "UPDATE proveedores SET estado_proveedor=1 WHERE id_proveedor='$id'";
+    }
+    
     if (mysqli_query($conn, $sql)) {
         Header("Location: proveedor.vista.php");
         echo $sql;
@@ -70,5 +77,3 @@ function eliminar(){
     
     mysqli_close($conn);
 }
-
-?>
