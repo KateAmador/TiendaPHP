@@ -42,12 +42,20 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
+<<<<<<< HEAD:php/util/header.php
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Entradas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="php/crudProducto/entrada.vista.php">Agregar</a></li>
+=======
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Empleados
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Agregar</a></li>
+>>>>>>> 1f9a7beb437e4067ea91523ca71006c7bb66a75d:php/crudVentas/ventas.vista.php
                             <!-- <li><a class="dropdown-item" href="modificarProducto.html">Modificar</a></li> -->
                             <!-- <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else here</a></li> -->
