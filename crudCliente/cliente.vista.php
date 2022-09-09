@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <?php include '../php/util/header.php';  ?>
+    <?php include '../util/header.php';  ?>
 
     <h3 class="text-center">Agregar un nuevo cliente</h3>
     <!-- Button trigger modal de guardar -->
@@ -112,7 +112,7 @@
                         <div>
                             <div class="mb-3 col-2">
                                 <label for="id_cliente" class="form-label">ID</label>
-                                <input type="text" class="form-control" id="id_cliente" name="id_cliente" readonly
+                                <input type="text" class="form-control"  id="id_cliente" name="id_cliente" readonly
                                     onmousedown="return false;">
                             </div>
                             <div class="row">
@@ -223,7 +223,8 @@
                             $datos->telefono_cliente . "||" .
                             $datos->email_cliente . "||" .
                             $datos->direccion_cliente . "||" .
-                            $datos->info_cliente;
+                            $datos->info_cliente . "||" . 
+                            $datos->estado_cliente;
                     ?>
 
                     <tr>
@@ -234,6 +235,7 @@
                         <td><?= $datos->email_cliente; ?></td>
                         <td><?= $datos->direccion_cliente; ?></td>
                         <td><?= $datos->info_cliente; ?></td>
+                        <td><?= $datos->estado_cliente; ?></td>
 
                         <!-- boton editar -->
                         <td><a class="btn btn-succes btn-primary " data-bs-toggle="modal" data-bs-target="#editar">
@@ -276,4 +278,4 @@
 
     </div>
 
-    <?php include '../php/util/footer.php';  ?>
+    <?php include '../util/footer.php';  ?> 

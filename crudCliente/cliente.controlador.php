@@ -59,6 +59,7 @@ function actualizar()
 
 function eliminar()
 {
+
   include_once('../conexion.php');
 
   $id_cliente = trim($_GET['id_cliente']);
