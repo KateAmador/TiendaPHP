@@ -214,7 +214,7 @@
                     <?php
                     include_once('../conexion.php') ?>
                     <?php
-                    $sql = $conn->query("SELECT * FROM clientes WHERE estado_cliente = 0");
+                    $sql = $conn->query("SELECT * FROM clientes WHERE 1");
                     while ($datos = $sql->fetch_object()) {
 
                         $datosclientes = $datos->id_cliente . "||" .

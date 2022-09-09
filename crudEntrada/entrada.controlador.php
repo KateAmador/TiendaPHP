@@ -12,17 +12,16 @@
  function guardar(){
 
     include_once('../conexion.php');
-    $Producto = trim($_POST['idProducto_entrada']);
-    $Proveedor = trim($_POST['idProveedor_entrada']);
+    $Producto = trim($_POST['producto']);
+    $Proveedor = trim($_POST['proveedor_entrada']);
     $Cantidad = trim($_POST['cantidad_entrada']);
     $Costo = trim($_POST['costo_entrada']);
     $Total= trim($_POST['total_entrada']);
-    $Fecha= trim($_POST['fecha_entrada']);
 
 
     $sql= "INSERT INTO entradas(idProducto_entrada, idProveedor_entrada, cantidad_entrada, costo_entrada, 
-    total_entrada, fecha_entrada)
-             VALUES ('$Producto' ,'$Proveedor','$Cantidad','$Costo','$Total','$Fecha')";
+    total_entrada)
+             VALUES ('$Producto' ,'$Proveedor','$Cantidad','$Costo','$Total')";
     if (mysqli_query($conn, $sql)) {
         Header("Location: entrada.vista.php");
     } else {

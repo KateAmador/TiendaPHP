@@ -8,19 +8,19 @@ $component = new Component();
     <div class="card-header">
         <h5 class="card-title">Agregar Entrada</h5>
     </div>
-    <form method="post" action="entrada.controlador.php">
+ 
         <div>
             <div class="">
                 <div class="mb-3 col-12">
                     <label for="producto" class="form-label">Producto</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <select name="producto" class="form-select" aria-label="Default select example">
                         <option selected>Producto</option>
                         <?php $component->viewOptionsComponent("productos", "0", "1") ?>
                     </select>
                 </div>
                 <div class="mb-3 col-12">
                     <label for="proveedor" class="form-label">Proveedor</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <select name="proveedor" class="form-select" aria-label="Default select example">
                         <option selected>Proveedores</option>
                         <?php $component->viewOptionsComponent("proveedores", "0", "1") ?>
                     </select>
