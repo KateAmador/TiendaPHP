@@ -18,9 +18,9 @@
 <body>
     <?php include '../util/header.php';  ?>
 
-    <h3>Agregar un nuevo cliente</h3>
+    <h3 class="text-center">Agregar un nuevo cliente</h3>
     <!-- Button trigger modal de guardar -->
-    <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#guardar">
+    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#guardar">
         Agregar cliente
     </button>
 
@@ -29,8 +29,8 @@
         <div class="modal fade" id="guardar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header bg-primary text-white">
-                        <h5 class="modal-title" id="exampleModalLabel">Actalizar Datos</h5>
+                    <div class="modal-header bg-secondary text-white">
+                        <h5 class="modal-title" id="exampleModalLabel">Guardar Datos</h5>
                     </div>
                     <div class="modal-body">
                         <div>
@@ -78,7 +78,7 @@
                             </div>
                         </div>
                         <p><br />
-                            <button class="btn btn-primary" type="submit" style="width: 120px; height: 60px;"
+                            <button class="btn btn-secondary" type="submit" style="width: 120px; height: 60px;"
                                 name="cliente_guardar" value="guardar">Guardar</button>
 
 
@@ -105,14 +105,14 @@
         <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header bg-primary text-white">
+                    <div class="modal-header bg-secondary text-white">
                         <h5 class="modal-title" id="exampleModalLabel">Actalizar Datos</h5>
                     </div>
                     <div class="modal-body">
                         <div>
                             <div class="mb-3 col-2">
                                 <label for="id_cliente" class="form-label">ID</label>
-                                <input type="text" class="form-control" id="id_cliente" name="id_cliente" readonly
+                                <input type="text" class="form-control"  id="id_cliente" name="id_cliente" readonly
                                     onmousedown="return false;">
                             </div>
                             <div class="row">
@@ -195,7 +195,7 @@
         <div class="p-4">
             <table class="table table-striped align-middle">
                 <thead>
-                    <tr class="bg-primary text-white">
+                    <tr class="bg-secondary text-white">
                         <th scope="col">id</th>
                         <th scope="col">nombre</th>
                         <th scope="col">apellido</th>
@@ -223,7 +223,8 @@
                             $datos->telefono_cliente . "||" .
                             $datos->email_cliente . "||" .
                             $datos->direccion_cliente . "||" .
-                            $datos->info_cliente;
+                            $datos->info_cliente . "||" . 
+                            $datos->estado_cliente;
                     ?>
 
                     <tr>
@@ -234,6 +235,7 @@
                         <td><?= $datos->email_cliente; ?></td>
                         <td><?= $datos->direccion_cliente; ?></td>
                         <td><?= $datos->info_cliente; ?></td>
+                        <td><?= $datos->estado_cliente; ?></td>
 
                         <!-- boton editar -->
                         <td><a class="btn btn-succes btn-primary " data-bs-toggle="modal" data-bs-target="#editar">
@@ -277,3 +279,4 @@
     </div>
 
     <?php include '../util/footer.php';  ?>
+
