@@ -12,10 +12,7 @@
 </head>
 
 <body>
-
 <?php include '../util/header.php'; ?>   
-
-
     <form class="card col-12 col-md-6 offset-md-3 mt-5" method="post" action="producto.controlador.php">
         <div class="card-header">
             <h5 class="card-title">Agregar Producto</h5>
