@@ -196,14 +196,15 @@
             <table class="table table-striped align-middle">
                 <thead>
                     <tr class="bg-secondary text-white">
-                        <th scope="col">id</th>
-                        <th scope="col">nombre</th>
-                        <th scope="col">apellido</th>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
                         <th scope="col">Telefono</th>
-                        <th scope="col">email</th>
+                        <th scope="col">Email</th>
                         <th scope="col">Direccion</th>
-                        <th scope="col">info demas</th>
-                        <th scope="col" colspan="2">opciones</th>
+                        <th scope="col">Info cliente</th>
+                        <th scope="col"> Estado</th>
+                        <th scope="col" colspan="2">Opciones</th>
 
                     </tr>
                 </thead>
@@ -214,7 +215,7 @@
                     <?php
                     include_once('../conexion.php') ?>
                     <?php
-                    $sql = $conn->query("SELECT * FROM clientes WHERE estado_cliente = 0");
+                    $sql = $conn->query("SELECT * FROM clientes WHERE 1");
                     while ($datos = $sql->fetch_object()) {
 
                         $datosclientes = $datos->id_cliente . "||" .
@@ -238,13 +239,14 @@
                         <td><?= $datos->estado_cliente; ?></td>
 
                         <!-- boton editar -->
-                        <td><a class="btn btn-succes btn-primary " data-bs-toggle="modal" data-bs-target="#editar">
-                                <i class="fa-solid fa-pen" onclick="agregarForm('<?php echo $datosclientes ?>');"></i></a></td>
+                        <td><a  href="" class="btn btn-succes btn-warning " data-bs-toggle="modal" data-bs-target="#editar">
+                                <i class="fa-solid fa-pen" onclick="agregarForm('<?php echo $datosclientes ?>');"></i></a>
 
 
                         <!-- boton eliminar -->
                         <td> <a href="cliente.vista.php?id=<?= $datos->id_cliente ?>" class="btn btn-small btn-danger"
-                        name="estado_cliente" type="submit" data-bs-target="#eliminar"><i class="fa-solid fa-trash"></i></a></td>
+                        name="estado_cliente" type="submit" data-bs-target="#eliminar"><i class="fa-solid fa-trash"></i></a>
+                    </td>
                     </tr>
 
                     <?php } ?>

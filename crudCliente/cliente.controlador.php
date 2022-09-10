@@ -59,11 +59,11 @@ function actualizar()
 
 function eliminar()
 {
-
+// 0 es inactivo y 1 es activo
   include_once('../conexion.php');
 
   $id_cliente = trim($_GET['id_cliente']);
-  $sql = "UPDATE cliente SET estado_cliente = 0 WHERE id_cliente = '$id_cliente'";
+  $sql = "UPDATE cliente SET estado_cliente = 1 WHERE id_cliente = '$id_cliente'";
   $query = mysqli_query($conn, $sql);
   if ($query) {
     Header("Location: cliente.vista.php");
