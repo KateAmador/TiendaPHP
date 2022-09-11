@@ -62,7 +62,6 @@ function eliminar(){
     $estado = trim($_GET['estado']);
 
     if($estado == 1){
-
         $sql= "UPDATE proveedores SET estado_proveedor=0 WHERE id_proveedor='$id'";
     }else{
         $sql= "UPDATE proveedores SET estado_proveedor=1 WHERE id_proveedor='$id'";
