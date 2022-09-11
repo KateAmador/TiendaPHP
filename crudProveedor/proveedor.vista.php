@@ -3,14 +3,20 @@ include_once "../components/options.component.php";
 $component = new Component();
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- <div class="mb-3 col-6">
-    <label for="direccion" class="form-label">Direccion</label>
-    <select class="form-select" aria-label="Default select example">
-        <option selected>Proveedores</option>
-       <?php //$component->viewOptionsComponent("proveedores", "0", "1") ?>
-    </select>
-</div> -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        
+    <title>Proveedores</title>
+    
+</head>
 
 <body>
     <form method="POST" action="proveedor.controlador.php">
@@ -91,7 +97,7 @@ $component = new Component();
                     </div>
                     <div class="modal-body">
                         <div>
-                            <div class=row">
+                            <div class="row">
                                 <div class="mb-3 col-6">
                                     <label for="nombreEmpresa" class="form-label">Empresa</label>
                                     <input type="text" class="form-control" id="nombreEmpresa" name="nombreEmpresa"
@@ -210,7 +216,7 @@ $component = new Component();
                     <a href="" class="btn btn-small btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         onclick="agregarForm('<?php echo $datosProveedor ?>');"><i class="fa-solid fa-pen"></i></a>
                     <a href="proveedor.controlador.php?id=<?= $datos->id_proveedor ?>&estado=<?= $datos->estado_proveedor ?>"
-                        class="btn btn-small btn-danger"><i class="fa-light fa-toggle-on"></i></a>
+                        class="btn btn-small btn-danger"><i class="bi bi-toggle2-on"></i></a>
                 </td>
             </tr>
             <?php } ?>
