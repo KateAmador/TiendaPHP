@@ -1,8 +1,3 @@
-<?php
-include_once "../components/options.component.php";
-$component = new Component();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,14 +8,13 @@ $component = new Component();
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-        
     <title>Proveedores</title>
-    
 </head>
 
 <body>
+    <!-- Modal -->
     <form method="POST" action="proveedor.controlador.php">
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="editar" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header bg-secondary text-white">
@@ -40,6 +34,21 @@ $component = new Component();
                                         placeholder="Nombre Empresa" required>
                                 </div>
                                 <div class="mb-3 col-6">
+                                    <label for="nombreEmpresa" class="form-label">Tipo Identificacion</label>
+                                    <select class="form-select" aria-label="Default select example" name="tipoID">
+                                        <option selected>Escoja una opcion</option>
+                                        <option value="RUT">RUT</option>
+                                        <option value="NIT">NIT</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="mb-3 col-6">
+                                    <label for="numID" class="form-label">Identificacion</label>
+                                    <input type="text" class="form-control" id="numID" name="numID"
+                                        placeholder="Numero Identificacion" required>
+                                </div>
+                                <div class="mb-3 col-6">
                                     <label for="direccion" class="form-label">Direccion</label>
                                     <input type="text" class="form-control" id="direccion" name="direccion"
                                         placeholder="Direccion" required>
@@ -70,8 +79,8 @@ $component = new Component();
                                 </div>
                             </div>
                             <div class="mb-3 col-12">
-                                <label for="in" class="form-label">Informacion Adicional</label>
-                                <textarea class="form-control" id="in" name="infoAdicional" rows="2"
+                                <label for="infoAdicional" class="form-label">Informacion Adicional</label>
+                                <textarea class="form-control" id="infoAdicional" name="infoAdicional" rows="2"
                                     required></textarea>
                             </div>
                         </div>
@@ -85,7 +94,7 @@ $component = new Component();
             </div>
         </div>
     </form>
-
+    <!-- End Modal -->
 
     <!-- Modal -->
     <form method="POST" action="proveedor.controlador.php">
@@ -104,12 +113,27 @@ $component = new Component();
                                         placeholder="Nombre Empresa" required>
                                 </div>
                                 <div class="mb-3 col-6">
+                                    <label for="nombreEmpresa" class="form-label">Tipo Identificacion</label>
+                                    <select class="form-select" aria-label="Default select example" name="tipoID">
+                                        <option selected>Escoja una opcion</option>
+                                        <option value="RUT">RUT</option>
+                                        <option value="NIT">NIT</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="mb-3 col-6">
+                                    <label for="numID" class="form-label">Identificacion</label>
+                                    <input type="text" class="form-control" id="numID" name="numID"
+                                        placeholder="Numero Identificacion" required>
+                                </div>
+                                <div class="mb-3 col-6">
                                     <label for="direccion" class="form-label">Direccion</label>
                                     <input type="text" class="form-control" id="direccion" name="direccion"
                                         placeholder="Direccion" required>
                                 </div>
-
                             </div>
+
                             <div class="row">
                                 <div class="mb-3 col-6">
                                     <label for="telefono" class="form-label">Telefono</label>
@@ -137,8 +161,8 @@ $component = new Component();
 
                             </div>
                             <div class="mb-3 col-12">
-                                <label for="in" class="form-label">Informacion Adicional</label>
-                                <textarea class="form-control" id="in" name="infoAdicional3" rows="2"
+                                <label for="infoAdicional" class="form-label">Informacion Adicional</label>
+                                <textarea class="form-control" id="infoAdicional" name="infoAdicional" rows="2"
                                     required></textarea>
                             </div>
                             <div class="mb-2">
@@ -155,6 +179,7 @@ $component = new Component();
             </div>
         </div>
     </form>
+    <!-- End Modal -->
 
     <?php include '../util/header.php';  ?>
 
@@ -165,11 +190,15 @@ $component = new Component();
                 data-bs-toggle="modal" data-bs-target="#guardar">
         </div>
     </div>
+
+    <!-- Table -->
     <table class="table table table-striped shadow-sm p-3 mb-5 bg-white rounded">
         <thead>
             <tr class="bg-secondary text-white">
                 <th scope="col">#</th>
                 <th scope="col">Empresa</th>
+                <th scope="col">Tipo ID</th>
+                <th scope="col">ID</th>
                 <th scope="col">Direccion</th>
                 <th scope="col">Telefono</th>
                 <th scope="col">Email</th>
@@ -181,6 +210,7 @@ $component = new Component();
             </tr>
         </thead>
         <tbody>
+
             <?php
             include('../conexion.php');
             $sql = $conn->query("SELECT * FROM proveedores WHERE 1");
@@ -189,6 +219,8 @@ $component = new Component();
                 $datosProveedor =
                     $datos->id_proveedor . "||" .
                     $datos->empresa_proveedor . "||" .
+                    $datos->tipoId_proveedor . "||" .
+                    $datos->numId_proveedor . "||" .
                     $datos->direccion_proveedor . "||" .
                     $datos->telefono_proveedor . "||" .
                     $datos->email_proveedor . "||" .
@@ -200,6 +232,8 @@ $component = new Component();
             <tr>
                 <th scope="row"><?= $datos->id_proveedor; ?></th>
                 <td><?= $datos->empresa_proveedor; ?></td>
+                <td><?= $datos->tipoId_proveedor; ?></td>
+                <td><?= $datos->numId_proveedor; ?></td>
                 <td><?= $datos->direccion_proveedor; ?></td>
                 <td><?= $datos->telefono_proveedor; ?></td>
                 <td><?= $datos->email_proveedor; ?></td>
@@ -212,30 +246,43 @@ $component = new Component();
                 <td><?php echo "Inactivo";?></td>
                 <?php }?>
 
+                <!-- Buttons -->
                 <td>
-                    <a href="" class="btn btn-small btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    <a href="" class="btn btn-small btn-warning" data-bs-toggle="modal" data-bs-target="#editar"
                         onclick="agregarForm('<?php echo $datosProveedor ?>');"><i class="fa-solid fa-pen"></i></a>
+
+                    <?php if($datos->estado_proveedor == 1){ ?>
                     <a href="proveedor.controlador.php?id=<?= $datos->id_proveedor ?>&estado=<?= $datos->estado_proveedor ?>"
-                        class="btn btn-small btn-danger"><i class="bi bi-toggle2-on"></i></a>
+                        class="btn btn-small btn-primary"><i class="bi bi-toggle2-on"></i></a>
+                    <?php } else { ?>
+                    <a href="proveedor.controlador.php?id=<?= $datos->id_proveedor ?>&estado=<?= $datos->estado_proveedor ?>"
+                        class="btn btn-small btn-secondary"><i class="bi bi-toggle2-off"></i></a>
+                    <?php } ?>
                 </td>
+                <!-- End Buttons -->
             </tr>
             <?php } ?>
         </tbody>
     </table>
+    <!-- End Table -->
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
+
     function agregarForm(datos) {
         d = datos.split("||");
 
         $("#id").val(d[0]);
         $("#nombreEmpresa").val(d[1]);
-        $("#direccion").val(d[2]);
-        $("#telefono").val(d[3]);
-        $("#email").val(d[4]);
-        $("#asesor").val(d[5]);
-        $("#telAsesor").val(d[6]);
-        $("#infoAdicional").val(d[7]);
+        $("#tipoID").val(d[2]);
+        $("#numID").val(d[3]);
+        $("#direccion").val(d[4]);
+        $("#telefono").val(d[5]);
+        $("#email").val(d[6]);
+        $("#asesor").val(d[7]);
+        $("#telAsesor").val(d[8]);
+        $("#infoAdicional").val(d[9]);
     }
     </script>
 
