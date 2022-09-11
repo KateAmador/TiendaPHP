@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <title>Tienda</title>
 </head>
 
@@ -22,60 +24,37 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="../index.php">Inicio</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item">
+                        <a class="nav-link " href="../crudProducto/producto.vista.php" role="button">
                             Productos
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../crudProducto/producto.vista.php">Agregar</a></li>
-                        </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item">
+                        <a class="nav-link " href="../crudEntrada/entrada.vista.php" role="button">
                             Entradas
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../crudEntrada/entrada.vista.php">Agregar</a></li>
-                        </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../crudCliente/cliente.vista.php" role="button">
                             Cliente
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../crudCliente/cliente.vista.php">Agregar</a></li>
-                        </ul>
                     </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../crudProveedor/proveedor.vista.php" role="button">
                             Proveedor
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../crudProveedor/proveedor.vista.php">Agregar </a></li>
-                        </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" role="button">
                             Ventas
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Agregar</a></li>
-                        </ul>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../crudCategoria/categoria.vista.php" role="button">
                             Categorias
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../crudCategoria/categoria.vista.php">Agregar</a></li>
-                        </ul>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-outline-secundary" type="submit">Buscar</button>
-                </form>
             </div>
         </div>
     </nav>

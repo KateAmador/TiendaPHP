@@ -284,4 +284,5 @@
 
     </div>
 
-    <?php include '../util/footer.php';  ?> 
+    <?php include '../util/footer.php';  ?>
+
