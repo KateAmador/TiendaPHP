@@ -14,7 +14,7 @@ $component = new Component();
 </div> -->
 
 <body>
-    <form method="POST" action="proveedor.controlador.php">
+    <form method="POST" action="categoria.controlador.php">
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -25,7 +25,7 @@ $component = new Component();
                         <div>
                             <div class="mb-3 col-2">
                                 <label for="id_categoria" class="form-label">ID</label>
-                                <input type="text" class="form-control" id="id_categoria" name="id_categoria" readonly onmousedown="return false;">
+                                <input type="id" class="form-control" id="id_categoria" name="id_categoria" readonly onmousedown="return false;">
                             </div>
                             <div class="row">
                                 <div class="mb-3 col-6">
@@ -33,7 +33,7 @@ $component = new Component();
                                     <input type="text" class="form-control" id="nombre_categoria" name="nombre_categoria" placeholder="Nombre categoria" required>
                                 </div>
                                 <div class="mb-3 col-6">
-                                    <label for="direccion_categoria" class="form-label">Descripcion</label>
+                                    <label for="descripcion_categoria" class="form-label">Descripcion</label>
                                     <input type="text" class="form-control" id="descripcion_categoria" name="descripcion_categoria" placeholder="Descripcion" required>
                                 </div>
                             </div>
@@ -50,8 +50,8 @@ $component = new Component();
     </form>
 
 
-    <!-- Modal -->
-    <form method="POST" action="proveedor.controlador.php">
+    <!-- Modal guardar-->
+    <form method="POST" action="categoria.controlador.php">
         <div class="modal fade" id="guardar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -62,7 +62,7 @@ $component = new Component();
                         <div>
                         <div class="mb-3 col-2">
                                 <label for="id_categoria" class="form-label">ID</label>
-                                <input type="text" class="form-control" id="id_categoria" name="id_categoria" readonly onmousedown="return false;">
+                                <input type="text" class="form-control" id="id_categoria" name="id_categoria" >
                             </div>
                             <div class="row">
                                 <div class="mb-3 col-6">
@@ -91,7 +91,7 @@ $component = new Component();
     <!-- <div class="col-12 mt-3"> -->
         <h5 class="text-center">CATEGORIA</h5>
         <div class="mb-1">
-            <input class="btn btn-secondary" name="guardar_proveedor" type="submit" value="Nuevo Proveedor" data-bs-toggle="modal" data-bs-target="#guardar">
+            <input class="btn btn-secondary" name="guardar_proveedor" type="submit" value="Nueva categoria" data-bs-toggle="modal" data-bs-target="#guardar">
         </div>
     </div>
     <table class="table table table-striped  bg-white rounded">
@@ -121,7 +121,7 @@ $component = new Component();
                     <th scope="row"><?= $datos->id_categoria; ?></th>
                     <td><?= $datos->nombre_categoria; ?></td>
                     <td><?= $datos->descripcion_categoria; ?></td>
-                    <td><?= $datos->estado_categoria; ?></td>
+                    
                     <?php if ($datos->estado_categoria == 1) { ?>
                         <td><?php echo "Activo"; ?></td>
                     <?php } else { ?>
@@ -130,7 +130,7 @@ $component = new Component();
                 <td>
                 <a href="" class="btn btn-small btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         onclick="agregarForm('<?php echo $datoscategoria ?>');"><i class="fa-solid fa-pen"></i></a>
-                    <a href="proveedor.controlador.php?id=<?= $datos->id_categoria ?>&estado=<?= $datos->estado_categoria ?>"
+                    <a href="categoria.controlador.php?id_categoria=<?= $datos->id_categoria ?>&estado=<?= $datos->estado_categoria ?>"
                         class="btn btn-small btn-danger"><i class="fa-light fa-toggle-on"></i></a>
                     </td>
                 </tr>
@@ -143,7 +143,7 @@ $component = new Component();
         function agregarForm(datos) {
             d = datos.split("||");
 
-            $("#id").val(d[0]);
+            $("#id_categoria    ").val(d[0]);
             $("#nombre_categoria").val(d[1]);
             $("#descripcion_categoria").val(d[2]);
 

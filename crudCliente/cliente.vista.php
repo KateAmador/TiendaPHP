@@ -202,8 +202,7 @@
                         <th scope="col">Telefono</th>
                         <th scope="col">Email</th>
                         <th scope="col">Direccion</th>
-                        <th scope="col">Info cliente</th>
-                        <th scope="col"> Estado</th>
+                        <th scope="col"> Estado_cliente</th>
                         <th scope="col" colspan="2">Opciones</th>
 
                     </tr>
@@ -224,7 +223,6 @@
                             $datos->telefono_cliente . "||" .
                             $datos->email_cliente . "||" .
                             $datos->direccion_cliente . "||" .
-                            $datos->info_cliente . "||" . 
                             $datos->estado_cliente;
                     ?>
 
@@ -235,8 +233,14 @@
                         <td><?= $datos->telefono_cliente; ?></td>
                         <td><?= $datos->email_cliente; ?></td>
                         <td><?= $datos->direccion_cliente; ?></td>
-                        <td><?= $datos->info_cliente; ?></td>
-                        <td><?= $datos->estado_cliente; ?></td>
+                    
+                    <?php if ($datos->estado_cliente == 1) { ?>
+                        <td><?php echo "Activo"; ?></td>
+                    <?php } else { ?>
+                        <td><?php echo "Inactivo"; ?></td>
+                        
+                        
+                    <?php } ?>
 
                         <!-- boton editar -->
                         <td><a  href="" class="btn btn-succes btn-warning " data-bs-toggle="modal" data-bs-target="#editar">
@@ -244,8 +248,8 @@
 
 
                         <!-- boton eliminar -->
-                        <td> <a href="cliente.vista.php?id=<?= $datos->id_cliente ?>" class="btn btn-small btn-danger"
-                        name="estado_cliente" type="submit" data-bs-target="#eliminar"><i class="fa-solid fa-trash"></i></a>
+                        <td> <a href="cliente.controlador.php?id_cliente=<?= $datos->id_cliente ?>&estado=<?= $datos->estado_cliente; ?>" class="btn btn-small btn-danger"
+                        name="estado_cliente" value = "eliminar" type="submit" data-bs-target="#eliminar"><i class="fa-solid fa-trash"></i></a>
                     </td>
                     </tr>
 
