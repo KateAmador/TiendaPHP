@@ -60,9 +60,9 @@ $component = new Component();
                     </div>
                     <div class="modal-body">
                         <div>
-                        <div class="mb-3 col-2">
+                            <div class="mb-3 col-2">
                                 <label for="id_categoria" class="form-label">ID</label>
-                                <input type="text" class="form-control" id="id_categoria" name="id_categoria" >
+                                <input type="text" class="form-control" id="id_categoria" name="id_categoria">
                             </div>
                             <div class="row">
                                 <div class="mb-3 col-6">
@@ -89,15 +89,15 @@ $component = new Component();
     <?php include '../util/header.php';  ?>
 
     <!-- <div class="col-12 mt-3"> -->
-        <h5 class="text-center">CATEGORIA</h5>
-        <div class="mb-1">
-            <input class="btn btn-secondary" name="guardar_proveedor" type="submit" value="Nueva categoria" data-bs-toggle="modal" data-bs-target="#guardar">
-        </div>
+    <h5 class="text-center">CATEGORIA</h5>
+    <div class="mb-1">
+        <input class="btn btn-secondary" name="guardar_proveedor" type="submit" value="Nueva categoria" data-bs-toggle="modal" data-bs-target="#guardar">
+    </div>
     </div>
     <table class="table table table-striped  bg-white rounded">
         <thead>
             <tr class="bg-secondary text-white">
-                
+
                 <th scope="col">id</th>
                 <th scope="col">categoria</th>
                 <th scope="col">descripcion</th>
@@ -121,17 +121,22 @@ $component = new Component();
                     <th scope="row"><?= $datos->id_categoria; ?></th>
                     <td><?= $datos->nombre_categoria; ?></td>
                     <td><?= $datos->descripcion_categoria; ?></td>
-                    
+
                     <?php if ($datos->estado_categoria == 1) { ?>
                         <td><?php echo "Activo"; ?></td>
                     <?php } else { ?>
                         <td><?php echo "Inactivo"; ?></td>
                     <?php } ?>
-                <td>
-                <a href="" class="btn btn-small btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                        onclick="agregarForm('<?php echo $datoscategoria ?>');"><i class="fa-solid fa-pen"></i></a>
-                    <a href="categoria.controlador.php?id_categoria=<?= $datos->id_categoria ?>&estado=<?= $datos->estado_categoria ?>"
-                        class="btn btn-small btn-danger"><i class="fa-light fa-toggle-on"></i></a>
+                    <td>
+                        <?php if ($datos->estado_categoria == 1) { ?>
+
+                    <td> <a href="categoria.controlador.php?id_categoria=<?= $datos->id_categoria ?>&estado=<?= $datos->estado_categoria; ?>" class="btn btn-small btn-primary" data-bs-target="#eliminar"><i class="bi bi-toggle2-on"></i></a>
+
+                    <?php } else { ?>
+
+                 
+                        <td> <a href="categoria.controlador.php?id_categoria=<?= $datos->id_categoria ?>&estado=<?= $datos->estado_categoria; ?>" class="btn btn-small btn-secondary" data-bs-target="#eliminar"><i class="bi bi-toggle2-off"></i></a>
+                    <?php } ?>
                     </td>
                 </tr>
             <?php } ?>
