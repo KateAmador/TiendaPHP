@@ -1,66 +1,70 @@
 <?php
-//recibo todos los datos del formulario html
-
-if (isset($_POST['categoria_guardar'])) {
+ 
+ if(isset($_POST['guardar_categoria'])) {
     guardar();
-} else if (isset($_POST['actualizar_cliente'])) {
+}
+ else if(isset($_POST['actualizar_proveedor'])) {
     actualizar();
-} else if (isset($_POST['eliminar_cliente'])) {
+} else{
     eliminar();
 }
-function guardar()
-{
+
+ function guardar(){
+
     include_once('../conexion.php');
+    $id_categoria= trim($_POST['id_categoria']);
+    $nombre_categoria = trim($_POST['nombre_categoria']);
+    $descripcion_categoria = trim($_POST['descripcion_categoria']);
+   
 
-    $id_categoria = ($_POST['id_categoria']);
-    $nombre_categoria = ($_POST['nombre_categoria']);
-    $descripcion_categoria = ($_POST['descripcion_categoria']);
-
-    $query = "  INSERT INTO categorias (id_categoria, nombre_categoria, descripcion_categoria) 
-  VALUES ('$id_categoria', '$nombre_categoria', '$descripcion_categoria')";
-
-    if (mysqli_query($conn, $query)) {
-        Header("Location: categoria.vista.php");
-        echo "Datos Guardados Correctamente <br>";
+    $sql= "INSERT INTO categorias (id_categoria, nombre_categoria, descripcion_categoria, estado_categoria)
+             VALUES ('$id_categoria', '$nombre_categoria', '$descripcion_categoria',  1)";
+    if (mysqli_query($conn, $sql)) {
+        Header("Location: proveedor.vista.php");
     } else {
-        echo "Error al guardar" . $query . "<br>" . mysqli_error($conn);
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
     mysqli_close($conn);
-}
+ }
 
-function actualizar()
-{
+ function actualizar(){ 
 
     include_once('../conexion.php');
-    $id_categoria = trim($_POST['id_categoria']);
-    $categoria = trim($_POST['categoria']);
-    $descripcion = trim($_POST['descripcion']);
+    $id_categoria= trim($_POST['id_categoria']);
+    $nombre_categoria = trim($_POST['nombre_categoria']);
+    $descripcion_categoria = trim($_POST['descripcion_categoria']);
 
-    $sql = "UPDATE categorias SET categoria='$categoria', categoria='$categoria', 
-          descripcion='$descripcion' WHERE id_categoria='$id_categoria'";
 
+    $sql= "UPDATE categorias SET id='$id', nombre_categoria='$nombre_categoria', descripcion_categoria='$descripcion_categoria' WHERE id_categoria='$id_categoria'";
     if (mysqli_query($conn, $sql)) {
-        echo "dato actualizado";
-        Header("Location: categoria.vista.php");
+        Header("Location: proveedor.vista.php");
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
     mysqli_close($conn);
 }
 
-function eliminar()
-{
+function eliminar(){
+
     include_once('../conexion.php');
+    $id_categoria = trim($_GET['id_categoria']);
+    $estado = trim($_GET['estado']);
 
-    $id_categoria = $_GET['id_categoria'];
-    $sql = "DELETE FROM categorias WHERE id_categoria = '$id_categoria'";
-    $query = mysqli_query($conn, $sql);
+    if($estado == 1){
 
-    if ($query) {
-        Header("Location: categoria.vista.php");
+        $sql= "UPDATE categorias SET estado_categoria=0 WHERE id_categoria='$id_categoria'";
+    }else{
+        $sql= "UPDATE categorias SET estado_categoria=1 WHERE id_categoria='$id_categoria'";
+    }
+
+    if (mysqli_query($conn, $sql)) {
+        Header("Location: proveedor.vista.php");
         echo $sql;
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
+    
     mysqli_close($conn);
 }
+
+?>
