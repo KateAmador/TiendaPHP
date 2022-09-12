@@ -130,8 +130,15 @@ $component = new Component();
                 <td>
                 <a href="" class="btn btn-small btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         onclick="agregarForm('<?php echo $datoscategoria ?>');"><i class="fa-solid fa-pen"></i></a>
-                    <a href="categoria.controlador.php?id_categoria=<?= $datos->id_categoria ?>&estado=<?= $datos->estado_categoria ?>"
-                        class="btn btn-small btn-danger"><i class="fa-light fa-toggle-on"></i></a>
+
+                        <?php if ($datos->estado_categoria == 1) { ?>
+                            <a href="categoria.controlador.php?id_categoria=<?= $datos->id_categoria ?>&estado=<?= $datos->estado_categoria ?>"
+                        class="btn btn-primary "><i class="bi bi-toggle2-on"></i></a>
+                    <?php } else { ?>
+                        <a href="categoria.controlador.php?id_categoria=<?= $datos->id_categoria ?>&estado=<?= $datos->estado_categoria ?>"
+                        class="btn btn-small btn-secondary "><i class="bi bi-toggle2-off"></i></i></a>
+                    <?php } ?>
+                   
                     </td>
                 </tr>
             <?php } ?>
