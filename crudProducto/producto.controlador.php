@@ -13,7 +13,7 @@ function guardar(){
 
     include_once ('../conexion.php');
 
-    $nombreProveedor = trim($_POST['nombreproducto']);
+    $nombreProveedor = trim($_POST['nombreProducto']);
     $nombreCategoria = trim($_POST['nombreCategoria']);
     $nombreProducto = trim($_POST['nombreProducto']);
     $costoProducto = trim($_POST['costoProducto']);
