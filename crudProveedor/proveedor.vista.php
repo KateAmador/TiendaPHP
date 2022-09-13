@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <title>Proveedores</title>
@@ -183,13 +182,12 @@
 
     <?php include '../util/header.php';  ?>
 
-    <div class="col-12 mt-3">
+    
         <h5 class="text-center">PROVEEDORES</h5>
         <div class="mb-1">
             <input class="btn btn-secondary" name="guardar_proveedor" type="submit" value="Nuevo Proveedor"
                 data-bs-toggle="modal" data-bs-target="#guardar">
         </div>
-    </div>
 
     <!-- Table -->
     <table class="table table table-striped shadow-sm p-3 mb-5 bg-white rounded">
@@ -248,15 +246,15 @@
 
                 <!-- Buttons -->
                 <td>
-                    <a href="" class="btn btn-small btn-warning" data-bs-toggle="modal" data-bs-target="#editar"
-                        onclick="agregarForm('<?php echo $datosProveedor ?>');"><i class="fa-solid fa-pen"></i></a>
+                    <a href="" class="btn btn-sm btn-primary btn-circle" data-bs-toggle="modal" data-bs-target="#editar"
+                        onclick="agregarForm('<?php echo $datosProveedor ?>');"><i class="bi bi-pencil-fill"></i></a>
 
                     <?php if($datos->estado_proveedor == 1){ ?>
                     <a href="proveedor.controlador.php?id=<?= $datos->id_proveedor ?>&estado=<?= $datos->estado_proveedor ?>"
-                        class="btn btn-small btn-primary"><i class="bi bi-toggle2-on"></i></a>
+                        class="btn btn-sm btn-danger btn-circle"><i class="bi bi-trash-fill"></i></a>
                     <?php } else { ?>
                     <a href="proveedor.controlador.php?id=<?= $datos->id_proveedor ?>&estado=<?= $datos->estado_proveedor ?>"
-                        class="btn btn-small btn-secondary"><i class="bi bi-toggle2-off"></i></a>
+                        class="btn btn-sm btn-success btn-circle"><i class="fa-solid fa-check"></i></a>
                     <?php } ?>
                 </td>
                 <!-- End Buttons -->
