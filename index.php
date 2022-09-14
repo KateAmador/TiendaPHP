@@ -1,3 +1,3 @@
 <?php
-    header('Location: crudProveedor/proveedor.vista.php');
+    header('Location: dashboard.php');
 ?>
