@@ -17,11 +17,16 @@
 <body>
     <?php include '../util/header.php';  ?>
 
+
     <h3 class="text-center">Agregar un nuevo cliente</h3>
     <!-- Button trigger modal de guardar -->
 
 
     <!-- Modal guardar -->
+    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#guardar">
+        Agregar cliente
+    </button>
+
     <form method="POST" action="cliente.controlador.php">
         <div class="modal fade" id="guardar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -88,7 +93,7 @@
 
     <!-- editar cliente  -->
     <form method="POST" action="cliente.controlador.php">
-        <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header bg-secondary text-white">
@@ -140,39 +145,16 @@
         </div>
     </form>
 
-    <!-- eliminar -->
-    <form method="POST" action="cliente.controlador.php">
-        <div class="modal fade" id="eliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">eliminar</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <h5>Esta seguro que desea eliminar a cliente? </h5>
-
-
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
-                        <input class="btn btn-primary" id="estado_cliente" name="estado_cliente" type="submit" value="eliminar">
-                    </div>
-                </div>
-            </div>
-        </div>
+    </div>
+    </div>
+    </div>
     </form>
-
 
     <div class="card">
         <div class="p-4">
             <table class="table table-striped align-middle">
                 <thead>
 
-                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#guardar">
-                        Agregar cliente
-                    </button>
                     <tr class="bg-secondary text-white">
                         <th scope="col">Id</th>
                         <th scope="col">Nombre</th>
@@ -221,7 +203,7 @@
                             <?php } ?>
 
                             <!-- boton editar -->
-                            <td><a href="" class="btn btn-succes btn-warning " data-bs-toggle="modal" data-bs-target="#editar">
+                            <td><a href="" class="btn btn-succes btn-warning " data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <i class="fa-solid fa-pen" onclick="agregarForm('<?php echo $datosclientes ?>');"></i></a>
 
 

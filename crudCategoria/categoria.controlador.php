@@ -66,5 +66,3 @@ function eliminar(){
     
     mysqli_close($conn);
 }
-
-?>
