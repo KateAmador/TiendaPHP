@@ -203,18 +203,19 @@
                             <?php } ?>
 
                             <!-- boton editar -->
-                            <td><a href="" class="btn btn-succes btn-warning " data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <td>
+                                <a href="" class="btn btn-sm btn-primary btn-circle" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                     <i class="fa-solid fa-pen" onclick="agregarForm('<?php echo $datosclientes ?>');"></i></a>
 
 
                                 <!-- boton eliminar -->
                                 <?php if ($datos->estado_cliente == 1) { ?>
 
-                            <td> <a href="cliente.controlador.php?id_cliente=<?= $datos->id_cliente ?>&estado=<?= $datos->estado_cliente; ?>" class="btn btn-small btn-primary" data-bs-target="#eliminar"><i class="bi bi-toggle2-on"></i></a>
+                             <a href="cliente.controlador.php?id_cliente=<?= $datos->id_cliente ?>&estado=<?= $datos->estado_cliente; ?>" class="btn btn-sm btn-danger btn-circle" data-bs-target="#eliminar"><i class="bi bi-trash-fill"></i></a>
 
                             <?php } else { ?>
 
-                            <td> <a href="cliente.controlador.php?id_cliente=<?= $datos->id_cliente ?>&estado=<?= $datos->estado_cliente; ?>" class="btn btn-small btn-secondary" data-bs-target="#eliminar"><i class="bi bi-toggle2-off"></i></a>
+                             <a href="cliente.controlador.php?id_cliente=<?= $datos->id_cliente ?>&estado=<?= $datos->estado_cliente; ?>" class="btn btn-sm btn-success btn-circle" data-bs-target="#eliminar"><i class="fa-solid fa-check"></i></a>
                             <?php } ?>
                             </td>
                         </tr>

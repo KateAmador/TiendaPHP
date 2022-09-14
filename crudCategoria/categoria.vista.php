@@ -126,12 +126,12 @@ $component = new Component();
                         <td><?php echo "Inactivo"; ?></td>
                     <?php } ?>
                     <td>
-                        <a href="" class="btn btn-small btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="agregarForm('<?php echo $datoscategoria ?>');"><i class="fa-solid fa-pen"></i></a>
+                        <a href="" class="btn btn-sm btn-primary btn-circle" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="agregarForm('<?php echo $datoscategoria ?>');"><i class="fa-solid fa-pen"></i></a>
 
                         <?php if ($datos->estado_categoria == 1) { ?>
-                            <a href="categoria.controlador.php?id_categoria=<?= $datos->id_categoria ?>&estado=<?= $datos->estado_categoria ?>" class="btn btn-primary "><i class="bi bi-toggle2-on"></i></a>
+                            <a href="categoria.controlador.php?id_categoria=<?= $datos->id_categoria ?>&estado=<?= $datos->estado_categoria ?>"class="btn btn-sm btn-danger btn-circle" data-bs-target="#eliminar"><i class="bi bi-trash-fill"></i></a>
                         <?php } else { ?>
-                            <a href="categoria.controlador.php?id_categoria=<?= $datos->id_categoria ?>&estado=<?= $datos->estado_categoria ?>" class="btn btn-small btn-secondary "><i class="bi bi-toggle2-off"></i></i></a>
+                            <a href="categoria.controlador.php?id_categoria=<?= $datos->id_categoria ?>&estado=<?= $datos->estado_categoria ?>"  class="btn btn-sm btn-success btn-circle"><i class="fa-solid fa-check"></i></a>
                         <?php } ?>
 
                     </td>
