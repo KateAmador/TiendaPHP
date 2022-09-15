@@ -13,7 +13,7 @@ function guardar(){
 
     include_once ('../conexion.php');
 
-    $nombreProveedor = trim($_POST['nombreProducto']);
+    $nombreProveedor = trim($_POST['nombreProveedor']);
     $nombreCategoria = trim($_POST['nombreCategoria']);
     $nombreProducto = trim($_POST['nombreProducto']);
     $costoProducto = trim($_POST['costoProducto']);
@@ -21,11 +21,28 @@ function guardar(){
     $observaciones = trim($_POST['observaciones']);
     $estadoProducto = trim($_POST['estadoProducto']);
     $cantidadProducto = trim($_POST['cantidadProducto']);
+    echo($nombreProveedor);
+    echo("<BR>");
+    echo($nombreCategoria);
+    echo("<BR>");
+    echo($nombreProducto);
+    echo("<BR>");
+    echo($precioProducto);
+    echo("<BR>");
+    echo($costoProducto);
+    echo("<BR>");
+    echo($observaciones);
+    echo("<BR>");
+    echo($estadoProducto);
+    echo("<BR>");
+    echo($cantidadProducto);
+    echo("<BR>");
 
+    
 
-    $sql= "INSERT INTO productos(idProveedor_producto,idCategoria_producto,nombre_producto,observacion_producto,estado_producto,cantidad_producto) VALUES ('$nombreProveedor','$nombreCategoria','$nombreProducto','$costoProducto','$precioProducto','$observaciones',1,'$cantidadProducto')";
-
+    $sql= "INSERT INTO productos(idProveedor_producto,idCategoria_producto,nombre_producto,observacion_producto,estado_producto,cantidad_producto,costo_producto,precio_producto) VALUES ('$nombreProveedor','$nombreCategoria','$nombreProducto','$observaciones','$estadoProducto','$cantidadProducto','$costoProducto','$precioProducto')";
     if (mysqli_query($conn, $sql)) {
+        
         Header("Location: producto.vista.php");
      } 
      else {

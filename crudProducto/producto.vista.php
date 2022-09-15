@@ -31,14 +31,14 @@ $component = new Component();
                     </div>
                 <div class="mb-3 col-12">
                     <label for="proveedor" class="form-label">Proveedor</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example" name="nombreProveedor">
                         <option selected>Proveedores</option>
                         <?php $component->viewOptionsComponent("proveedores", "0", "1") ?>
                     </select>
                 </div>
                 <div class="mb-3 col-12">
                     <label for="proveedor" class="form-label">Categoria</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example" name="nombreCategoria">
                         <option selected>Categoria</option>
                         <?php $component->viewOptionsComponent("categorias", "0", "1") ?>
                     </select>
@@ -46,14 +46,14 @@ $component = new Component();
 
                     <div class="row"> 
 
-                        <!-- <div class="mb-3  col-6">
+                        <div class="mb-3  col-6">
                             <label for="estadoProducto" class="form-label">Estado del Producto</label>
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" name="estadoProducto">
                                 <option selected>Selecciona el estado</option>
                                 <option value="1">Activo</option>
-                                <option value="0">In b activo</option>
+                                <option value="0">Inactivo</option>
                             </select>
-                        </div> -->
+                        </div>
                         <div class="mb-3  col-6">
                             <label for="cantidadProducto" class="form-label">Cantidad del Producto</label>
                             <input type="number" name="cantidadProducto" class="form-control" id="exampleFormControlInput1" placeholder="Valor de Compra">
