@@ -47,7 +47,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" role="button">
+                        <a class="nav-link" href="../crudVenta/venta.vista.php" role="button">
                             Ventas
                         </a>
                     </li>
