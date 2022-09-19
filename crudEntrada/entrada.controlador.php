@@ -19,9 +19,16 @@
     $Total= trim($_POST['total_entrada']);
 
 
+<<<<<<< HEAD
+    $sql= "INSERT INTO entradas, producto (idProducto_entrada, idProveedor_entrada, cantidad_entrada, costo_entrada, 
+    total_entrada, fecha_entrada)
+             VALUES ('$Producto' ,'$Proveedor','$Cantidad','$Costo','$Total','$Fecha')";
+             
+=======
     $sql= "INSERT INTO entradas(idProducto_entrada, idProveedor_entrada, cantidad_entrada, costo_entrada, 
     total_entrada)
              VALUES ('$Producto' ,'$Proveedor','$Cantidad','$Costo','$Total')";
+>>>>>>> a140877a5804ad705208dfea16fdfb1710ddf56f
     if (mysqli_query($conn, $sql)) {
         Header("Location: entrada.vista.php");
     } else {

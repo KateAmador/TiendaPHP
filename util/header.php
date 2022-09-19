@@ -32,11 +32,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="../crudEntrada/entrada.vista.php" role="button">
-                            Entradas
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="../crudCliente/cliente.vista.php" role="button">
                             Cliente
                         </a>
