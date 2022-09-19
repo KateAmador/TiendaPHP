@@ -1,19 +1,17 @@
-<?php
-include_once "../components/options.component.php";
-$component = new Component();
-?>
 
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- <div class="mb-3 col-6">
-    <label for="direccion" class="form-label">Direccion</label>
-    <select class="form-select" aria-label="Default select example">
-        <option selected>Proveedores</option>
-       <?php //$component->viewOptionsComponent("proveedores", "0", "1") 
-        ?>
-    </select>
-</div> -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <title>Categorias</title>
+</head>
 
 <body>
+    <?php include '../util/header.php';  ?>
     <form method="POST" action="categoria.controlador.php">
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -85,8 +83,6 @@ $component = new Component();
         </div>
     </form>
 
-    <?php include '../util/header.php';  ?>
-
     <!-- <div class="col-12 mt-3"> -->
     <h5 class="text-center">CATEGORIA</h5>
     <div class="mb-1">
@@ -129,9 +125,9 @@ $component = new Component();
                         <a href="" class="btn btn-sm btn-primary btn-circle" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="agregarForm('<?php echo $datoscategoria ?>');"><i class="fa-solid fa-pen"></i></a>
 
                         <?php if ($datos->estado_categoria == 1) { ?>
-                            <a href="categoria.controlador.php?id_categoria=<?= $datos->id_categoria ?>&estado=<?= $datos->estado_categoria ?>"class="btn btn-sm btn-danger btn-circle" data-bs-target="#eliminar"><i class="bi bi-trash-fill"></i></a>
+                            <a href="categoria.controlador.php?id_categoria=<?= $datos->id_categoria ?>&estado=<?= $datos->estado_categoria ?>" class="btn btn-sm btn-danger btn-circle" data-bs-target="#eliminar"><i class="bi bi-trash-fill"></i></a>
                         <?php } else { ?>
-                            <a href="categoria.controlador.php?id_categoria=<?= $datos->id_categoria ?>&estado=<?= $datos->estado_categoria ?>"  class="btn btn-sm btn-success btn-circle"><i class="fa-solid fa-check"></i></a>
+                            <a href="categoria.controlador.php?id_categoria=<?= $datos->id_categoria ?>&estado=<?= $datos->estado_categoria ?>" class="btn btn-sm btn-success btn-circle"><i class="fa-solid fa-check"></i></a>
                         <?php } ?>
 
                     </td>

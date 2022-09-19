@@ -21,13 +21,8 @@ function guardar()
 
     if (mysqli_query($conn, $sql)) {
         print "<script>alert(\"Registrado correctamente.\");window.location='login.vista.php';</script>";
-        // echo '<script language="javascript">
-        //         alert("Te has registrado con exito");
-        //     </script>';
-        // Header("Location: login.vista.php");
     } else {
         print "<script>alert(\"Email duplicado.\");window.location='registro.vista.php';</script>";
-        // echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
     mysqli_close($conn);
 }

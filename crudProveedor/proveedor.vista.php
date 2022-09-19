@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <?php include '../util/header.php';  ?>
+
     <!-- Modal -->
     <form method="POST" action="proveedor.controlador.php">
         <div class="modal fade" id="editar" tabindex="-1" aria-labelledby="editar" aria-hidden="true">
@@ -161,9 +163,6 @@
         </div>
     </form>
     <!-- End Modal -->
-
-    <?php include '../util/header.php';  ?>
-
 
     <h5 class="text-center">PROVEEDORES</h5>
 
