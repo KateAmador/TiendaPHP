@@ -13,6 +13,8 @@
 
     include_once('../conexion.php');
     $nombreEmpresa = trim($_POST['nombreEmpresa']);
+    $tipoID = trim($_POST['tipoID']);
+    $numID = trim($_POST['numID']);
     $direccion = trim($_POST['direccion']);
     $telefono = trim($_POST['telefono']);
     $email = trim($_POST['email']);
@@ -21,8 +23,8 @@
     $infoAdicional = trim($_POST['infoAdicional']);
 
 
-    $sql= "INSERT INTO proveedores(empresa_proveedor, direccion_proveedor, telefono_proveedor, email_proveedor, asesor_proveedor, telAsesor_proveedor, infoAdicional_proveedor, estado_proveedor)
-             VALUES ('$nombreEmpresa','$direccion','$telefono','$email','$asesor','$telAsesor','$infoAdicional', 1)";
+    $sql= "INSERT INTO proveedores(empresa_proveedor, tipoId_proveedor, numId_proveedor, direccion_proveedor, telefono_proveedor, email_proveedor, asesor_proveedor, telAsesor_proveedor, infoAdicional_proveedor, estado_proveedor)
+             VALUES ('$nombreEmpresa','$tipoID',$numID,'$direccion','$telefono','$email','$asesor','$telAsesor','$infoAdicional', 1)";
     if (mysqli_query($conn, $sql)) {
         Header("Location: proveedor.vista.php");
     } else {
@@ -36,6 +38,8 @@
     include_once('../conexion.php');
     $id = trim($_POST['id']);
     $nombreEmpresa = trim($_POST['nombreEmpresa']);
+    $tipoID = trim($_POST['tipoID']);
+    $numID = trim($_POST['numID']);
     $direccion = trim($_POST['direccion']);
     $telefono = trim($_POST['telefono']);
     $email = trim($_POST['email']);
@@ -44,8 +48,9 @@
     $infoAdicional = trim($_POST['infoAdicional']);
 
 
-    $sql= "UPDATE proveedores SET empresa_proveedor='$nombreEmpresa', direccion_proveedor='$direccion', telefono_proveedor='$telefono', 
-            email_proveedor='$email', asesor_proveedor='$asesor', telAsesor_proveedor='$telAsesor', infoAdicional_proveedor='$infoAdicional' 
+    $sql= "UPDATE proveedores SET empresa_proveedor='$nombreEmpresa', tipoId_proveedor='$tipoID', numId_proveedor='$numID', 
+            direccion_proveedor='$direccion', telefono_proveedor='$telefono', email_proveedor='$email', asesor_proveedor='$asesor', 
+            telAsesor_proveedor='$telAsesor', infoAdicional_proveedor='$infoAdicional' 
             WHERE id_proveedor='$id'";
     if (mysqli_query($conn, $sql)) {
         Header("Location: proveedor.vista.php");
@@ -62,7 +67,6 @@ function eliminar(){
     $estado = trim($_GET['estado']);
 
     if($estado == 1){
-
         $sql= "UPDATE proveedores SET estado_proveedor=0 WHERE id_proveedor='$id'";
     }else{
         $sql= "UPDATE proveedores SET estado_proveedor=1 WHERE id_proveedor='$id'";
