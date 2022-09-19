@@ -31,18 +31,8 @@
                             Productos
                         </a>
                     </li>
-<<<<<<< HEAD
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-=======
-                    <li class="nav-item">
-                        <a class="nav-link " href="../crudEntrada/entrada.vista.php" role="button">
-                            Entradas
-                        </a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../crudCliente/cliente.vista.php" role="button">
->>>>>>> a140877a5804ad705208dfea16fdfb1710ddf56f
                             Cliente
                         </a>
                     </li>
@@ -51,19 +41,6 @@
                             Proveedor
                         </a>
                     </li>
-<<<<<<< HEAD
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Movimientos
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../crudMovimientos/movimientos.vista.php">Agregar</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-=======
                     <li class="nav-item">
                         <a class="nav-link" href="#" role="button">
                             Ventas
@@ -71,7 +48,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../crudCategoria/categoria.vista.php" role="button">
->>>>>>> a140877a5804ad705208dfea16fdfb1710ddf56f
                             Categorias
                         </a>
                     </li>
