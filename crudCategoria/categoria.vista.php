@@ -70,7 +70,7 @@ $component = new Component();
                                 </div>
                                 <div class="mb-3 col-6">
                                     <label for="direccion_categoria" class="form-label">Descripcion</label>
-                                    <input type="text" class="form-control" id="descripcion_categoria" name="descripcion_categoria" placeholder="Descripcion" required>
+                            <input type="text" class="form-control" id="descripcion_categoria" name="descripcion_categoria" placeholder="Descripcion" required>
                                 </div>
                             </div>
                         </div>
@@ -88,12 +88,32 @@ $component = new Component();
     <?php include '../util/header.php';  ?>
 
     <!-- <div class="col-12 mt-3"> -->
-    <h5 class="text-center">CATEGORIA</h5>
-    <div class="mb-1">
-        <input class="btn btn-secondary" name="guardar_proveedor" type="submit" value="Nueva categoria" data-bs-toggle="modal" data-bs-target="#guardar">
+   
+    <?php
+    $where = "";
+
+    if (isset($_GET['enviar'])) {
+        $busqueda = $_GET['busqueda'];
+
+
+        if (isset($_GET['busqueda'])) {
+            $where = "WHERE nombre_cliente LIKE'%" . $busqueda . "%' OR apellido_cliente  LIKE'%" . $busqueda . "%'
+    OR telefono_cliente  LIKE'%" . $busqueda . "%' OR email_cliente  LIKE'%" . $busqueda . "%' OR direccion_cliente  LIKE'%" . $busqueda . "%'";
+        }
+    }
+    ?>
+     <br>
+     <h5 class="text-center">CATEGORIA</h5>
+    <div class="mb-3 offset-md-10 col-2">
+        <form class="d-flex">
+            <i></i>
+            <input type="search" class="form-control me-2 light-table-filter" data-table="table_id" type="text" placeholder="Buscar">
+
+            <hr>
+        </form>
     </div>
-    </div>
-    <table class="table table table-striped  bg-white rounded">
+            <table class="table table-striped align-middle table_id">
+                <thead>
         <thead>
             <tr class="bg-secondary text-white">
 
@@ -151,5 +171,5 @@ $component = new Component();
 
         }
     </script>
-
+ <script src="../js/buscador.js"></script>
     <?php include '../util/footer.php';  ?>
