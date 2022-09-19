@@ -33,14 +33,6 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Entradas
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../crudEntrada/entrada.vista.php">Agregar</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Cliente
                         </a>
                         <ul class="dropdown-menu">
@@ -58,12 +50,13 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ventas
+                            Movimientos
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Agregar</a></li>
+                            <li><a class="dropdown-item" href="../crudMovimientos/movimientos.vista.php">Agregar</a></li>
                         </ul>
                     </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Categorias

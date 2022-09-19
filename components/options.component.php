@@ -7,7 +7,7 @@
 
         //esta funcion devuelve los option para ser usados dentro de un selct en cualquier parte de la app
         function viewOptionsComponent($nameTable,$value,$showName){
-            include('../conexion.php');
+        /*    include('../conexion.php');
             $sql = $conn->query("SELECT * FROM $nameTable");
             while ($datos = $sql->fetch_array()) {
                 echo "
@@ -16,7 +16,7 @@
                 </option>
             ";
          } 
-         mysqli_close($conn);
+         mysqli_close($conn);*/
         }
         
         

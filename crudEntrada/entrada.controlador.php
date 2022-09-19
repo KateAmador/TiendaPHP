@@ -20,9 +20,10 @@
     $Fecha= trim($_POST['fecha_entrada']);
 
 
-    $sql= "INSERT INTO entradas(idProducto_entrada, idProveedor_entrada, cantidad_entrada, costo_entrada, 
+    $sql= "INSERT INTO entradas, producto (idProducto_entrada, idProveedor_entrada, cantidad_entrada, costo_entrada, 
     total_entrada, fecha_entrada)
              VALUES ('$Producto' ,'$Proveedor','$Cantidad','$Costo','$Total','$Fecha')";
+             
     if (mysqli_query($conn, $sql)) {
         Header("Location: entrada.vista.php");
     } else {
