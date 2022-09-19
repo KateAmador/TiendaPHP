@@ -149,10 +149,29 @@
     </div>
     </div>
     </form>
+    <?php
+    $where = "";
 
-    <div class="card">
-        <div class="p-4">
-            <table class="table table-striped align-middle">
+    if (isset($_GET['enviar'])) {
+        $busqueda = $_GET['busqueda'];
+
+
+        if (isset($_GET['busqueda'])) {
+            $where = "WHERE nombre_cliente LIKE'%" . $busqueda . "%' OR apellido_cliente  LIKE'%" . $busqueda . "%'
+    OR telefono_cliente  LIKE'%" . $busqueda . "%' OR email_cliente  LIKE'%" . $busqueda . "%' OR direccion_cliente  LIKE'%" . $busqueda . "%'";
+        }
+    }
+    ?>
+     <br>
+    <div class="mb-3 offset-md-10 col-2">
+        <form class="d-flex">
+            <i></i>
+            <input type="search" class="form-control me-2 light-table-filter" data-table="table_id" type="text" placeholder="Buscar">
+
+            <hr>
+        </form>
+    </div>
+            <table class="table table-striped align-middle table_id">
                 <thead>
 
                     <tr class="bg-secondary text-white">
@@ -241,7 +260,7 @@
 
                 }
             </script>
-
+ <script src="../js/buscador.js"></script>
 
         </div>
 
