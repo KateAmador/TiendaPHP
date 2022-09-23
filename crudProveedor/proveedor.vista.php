@@ -91,7 +91,7 @@
                                     <input type="text" class="form-control" id="nombreEmpresa" name="nombreEmpresa" placeholder="Nombre Empresa" required>
                                 </div>
                                 <div class="mb-3 col-6">
-                                    <label for="nombreEmpresa" class="form-label">Tipo Identificacion</label>
+                                    <label for="tipoID" class="form-label">Tipo Identificacion</label>
                                     <select class="form-select" aria-label="Default select example" name="tipoID">
                                         <option selected>Escoja una opcion</option>
                                         <option value="RUT">RUT</option>
@@ -151,6 +151,20 @@
         </div>
     </form>
     <!-- End Modal -->
+
+    <?php
+    $where = "";
+
+    if (isset($_GET['enviar'])) {
+        $busqueda = $_GET['busqueda'];
+
+
+        if (isset($_GET['busqueda'])) {
+            $where = "WHERE nombre_cliente LIKE'%" . $busqueda . "%' OR apellido_cliente  LIKE'%" . $busqueda . "%'
+    OR telefono_cliente  LIKE'%" . $busqueda . "%' OR email_cliente  LIKE'%" . $busqueda . "%' OR direccion_cliente  LIKE'%" . $busqueda . "%'";
+        }
+    }
+    ?>
 
     <h5 class="text-center">PROVEEDORES</h5>
 

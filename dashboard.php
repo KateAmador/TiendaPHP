@@ -335,7 +335,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                                 <!--<?php $component->count("clientes", "id_cliente") ?>-->
                                             </div>
                                             <div class="col-auto">
-                                                <i class="bi bi-people fa-2x text-gray-300"></i>
+                                                <i class="fa fa-user fa-2x text-gray-300"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -359,14 +359,14 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                                 <!--<?php $component->count("clientes", "id_cliente") ?>-->
                                             </div>
                                             <div class="col-auto">
-                                                <i class="bi bi-person-badge fa-2x text-gray-300"></i>
+                                                <i class="fa fa-users fa-2x text-gray-300"></i>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Producto mes -->
+                            <!-- Productos -->
                             <div class="col-xl-3 col-md-6 mb-4">
                                 <div class="card border-left-primary shadow h-100 py-2">
                                     <div class="card-body">
@@ -383,7 +383,7 @@ $tipo_usuario = $_SESSION['tipo_usuario'];
                                                 <!--<?php $component->count("clientes", "id_cliente") ?>-->
                                             </div>
                                             <div class="col-auto">
-                                                <i class="bi bi-box-seam fa-2x text-gray-300"></i>
+                                                <i class="fa fa-shopping-cart fa-2x text-gray-300"></i>
                                             </div>
                                         </div>
                                     </div>
