@@ -32,12 +32,6 @@
 
 			} else {
 				print "<script>alert(\"No existe el usuario\");window.location='login.vista.php';</script>";
-		}
-		
-		
-		
+		}	
 	}
-	
-	
-	
 ?>
