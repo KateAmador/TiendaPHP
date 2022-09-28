@@ -12,6 +12,9 @@
 
 <body>
     <?php include '../util/header.php';  ?>
+    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Agregar categoria
+    </button>
     <form method="POST" action="categoria.controlador.php">
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">

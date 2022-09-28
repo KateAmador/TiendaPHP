@@ -22,10 +22,13 @@
     <!-- Button trigger modal de guardar -->
 
 
+
+
+
+
+
     <!-- Modal guardar -->
-    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#guardar">
-        Agregar cliente
-    </button>
+
 
     <form method="POST" action="cliente.controlador.php">
         <div class="modal fade" id="guardar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -149,125 +152,128 @@
     </div>
     </div>
     </form>
-    <?php
-    $where = "";
-
-    if (isset($_GET['enviar'])) {
-        $busqueda = $_GET['busqueda'];
 
 
-        if (isset($_GET['busqueda'])) {
-            $where = "WHERE nombre_cliente LIKE'%" . $busqueda . "%' OR apellido_cliente  LIKE'%" . $busqueda . "%'
-    OR telefono_cliente  LIKE'%" . $busqueda . "%' OR email_cliente  LIKE'%" . $busqueda . "%' OR direccion_cliente  LIKE'%" . $busqueda . "%'";
-        }
-    }
-    ?>
-     <br>
-    <div class="mb-3 offset-md-10 col-2">
-        <form class="d-flex">
-            <i></i>
-            <input type="search" class="form-control me-2 light-table-filter" data-table="table_id" type="text" placeholder="Buscar">
+    <br>
 
-            <hr>
-        </form>
-    </div>
-            <table class="table table-striped align-middle table_id">
-                <thead>
-
-                    <tr class="bg-secondary text-white">
-                        <th scope="col">Id</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Telefono</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Direccion</th>
-                        <th scope="col"> Estado_cliente</th>
-                        <th scope="col" colspan="2">Opciones</th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    <thead>
-                        </tr>
-                    </thead>
-                    <?php
-                    include_once('../conexion.php');
-
-                    $sql = $conn->query("SELECT * FROM clientes WHERE 1");
-                    while ($datos = $sql->fetch_object()) {
-
-                        $datosclientes = $datos->id_cliente . "||" .
-                            $datos->nombre_cliente . "||" .
-                            $datos->apellido_cliente . "||" .
-                            $datos->telefono_cliente . "||" .
-                            $datos->email_cliente . "||" .
-                            $datos->direccion_cliente . "||" .
-                            $datos->estado_cliente;
-                    ?>
-
-                        <tr>
-                            <th scope="row"><?= $datos->id_cliente; ?></th>
-                            <td><?= $datos->nombre_cliente; ?></td>
-                            <td><?= $datos->apellido_cliente; ?></td>
-                            <td><?= $datos->telefono_cliente; ?></td>
-                            <td><?= $datos->email_cliente; ?></td>
-                            <td><?= $datos->direccion_cliente; ?></td>
-
-                            <?php if ($datos->estado_cliente == 1) { ?>
-                                <td><?php echo "Activo"; ?></td>
-                            <?php } else { ?>
-                                <td><?php echo "Inactivo"; ?></td>
-
-
-                            <?php } ?>
-
-                            <!-- boton editar -->
-                            <td>
-                                <a href="" class="btn btn-sm btn-primary btn-circle" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    <i class="fa-solid fa-pen" onclick="agregarForm('<?php echo $datosclientes ?>');"></i></a>
-
-
-                                <!-- boton eliminar -->
-                                <?php if ($datos->estado_cliente == 1) { ?>
-
-                             <a href="cliente.controlador.php?id_cliente=<?= $datos->id_cliente ?>&estado=<?= $datos->estado_cliente; ?>" class="btn btn-sm btn-danger btn-circle" data-bs-target="#eliminar"><i class="bi bi-trash-fill"></i></a>
-
-                            <?php } else { ?>
-
-                             <a href="cliente.controlador.php?id_cliente=<?= $datos->id_cliente ?>&estado=<?= $datos->estado_cliente; ?>" class="btn btn-sm btn-success btn-circle" data-bs-target="#eliminar"><i class="fa-solid fa-check"></i></a>
-                            <?php } ?>
-                            </td>
-                        </tr>
-
-                    <?php } ?>
-                </tbody>
-            </table>
-
-
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-            <script>
-                function agregarForm(datos) {
-                    d = datos.split("||");
-
-                    $("#id_cliente").val(d[0]);
-                    $("#nombre_cliente").val(d[1]);
-                    $("#apellido_cliente").val(d[2]);
-                    $("#telefono_cliente").val(d[3]);
-                    $("#email_cliente").val(d[4]);
-                    $("#direccion_cliente").val(d[5]);
-                    //$("#info_cliente").val(d[6]);
-                    //$("#emailE").val(d[5]);
-
-                }
-            </script>
- <script src="../js/buscador.js"></script>
-
+    <div class="row">
+        <div class="mb-3 col-6">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#guardar">
+                Agregar cliente
+            </button>
         </div>
+    </div>
+
+
+
+    <table class="table table-striped align-middle" id="table_id">
+        <thead>
+
+            <tr class="bg-secondary text-white">
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Email</th>
+                <th scope="col">Direccion</th>
+                <th scope="col"> Estado_cliente</th>
+                <th scope="col" colspan="2">Opciones</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+
+            include '../conexion.php';
 
 
 
 
+
+            $sql = $conn->query("SELECT * FROM clientes WHERE 1");
+            while ($datos = $sql->fetch_object()) {
+
+                $datosclientes = $datos->id_cliente . "||" .
+                    $datos->nombre_cliente . "||" .
+                    $datos->apellido_cliente . "||" .
+                    $datos->telefono_cliente . "||" .
+                    $datos->email_cliente . "||" .
+                    $datos->direccion_cliente . "||" .
+                    $datos->estado_cliente;
+            ?>
+
+                <tr>
+
+                    <th scope="row"><?= $datos->id_cliente; ?></th>
+                    <td><?= $datos->nombre_cliente; ?></td>
+                    <td><?= $datos->apellido_cliente; ?></td>
+                    <td><?= $datos->telefono_cliente; ?></td>
+                    <td><?= $datos->email_cliente; ?></td>
+                    <td><?= $datos->direccion_cliente; ?></td>
+                    <td>
+
+                        <?php if ($datos->estado_cliente == 1) { ?>
+                    <td><?php echo "Activo"; ?></td>
+                <?php } else { ?>
+                    <td><?php echo "Inactivo"; ?></td>
+
+
+                <?php } ?>
+
+                <!-- boton editar -->
+                <td>
+                    <a href="" class="btn btn-sm btn-primary btn-circle" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="fa-solid fa-pen" onclick="agregarForm('<?php echo $datosclientes ?>');"></i></a>
+
+                    <!-- boton eliminar -->
+                    <?php if ($datos->estado_cliente == 1) { ?>
+
+                        <a href="cliente.controlador.php?id_cliente=<?= $datos->id_cliente ?>&estado=<?= $datos->estado_cliente; ?>" class="btn btn-sm btn-danger btn-circle" data-bs-target="#eliminar"><i class="bi bi-trash-fill"></i></a>
+
+                    <?php } else { ?>
+
+                        <a href="cliente.controlador.php?id_cliente=<?= $datos->id_cliente ?>&estado=<?= $datos->estado_cliente; ?>" class="btn btn-sm btn-success btn-circle" data-bs-target="#eliminar"><i class="fa-solid fa-check"></i></a>
+                    <?php } ?>
+                </td>
+                </tr>
+
+            <?php
+            } ?>
+        </tbody>
+    </table>
+    </div>
+    <script>
+        var tabla = document.querySelector("#table_id");
+        var dataTable = new DataTable(tabla, {
+            perPage: 3,
+            perPageSelect: [3, 6, 9, 10],
+
+            labels: {
+            placeholder: "Buscar...",
+            perPage: "{select} entradas por pagina",
+            noRows: "No hay resultados en tu busqueda",
+            info: "Mostrando {start} a {end} de {rows} entradas",
+           
+        }   
+        });
+    </script>
 
     </div>
+
+    <script>
+        function agregarForm(datos) {
+            d = datos.split("||");
+
+            $("#id_cliente").val(d[0]);
+            $("#nombre_cliente").val(d[1]);
+            $("#apellido_cliente").val(d[2]);
+            $("#telefono_cliente").val(d[3]);
+            $("#email_cliente").val(d[4]);
+            $("#direccion_cliente").val(d[5]);
+            //$("#info_cliente").val(d[6]);
+            //$("#emailE").val(d[5]);
+
+        }
+    </script>
 
     <?php include '../util/footer.php';  ?>
